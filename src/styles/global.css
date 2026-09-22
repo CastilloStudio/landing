@@ -8,6 +8,9 @@
   --color-navy: #0f172a;
   --color-navy-soft: #1e293b;
   --color-blue: #3b82f6;
+  /* El azul de marca sobre blanco se queda en 3,1:1 y el texto pequeño necesita
+     4,5:1. Este es el mismo azul, oscurecido, para texto y botones. */
+  --color-blue-ink: #1d4ed8;
   --color-blue-soft: #60a5fa;
   --color-grey: #cbd5e1;
   --color-bone: #f8fafc;

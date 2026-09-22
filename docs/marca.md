@@ -46,11 +46,18 @@ Ruta: `brand/svg/castillo-studio-<lockup>-<variante>.svg` y el PNG equivalente e
 | Color | Hex | Uso |
 |---|---|---|
 | Azul profundo | `#0F172A` | Tinta principal, fondos oscuros. Confianza, estabilidad. |
-| Azul acento | `#3B82F6` | El punto, enlaces, CTA. Tecnología, dinamismo. Solo como acento. |
+| Azul acento | `#3B82F6` | El punto del isotipo y las superficies grandes. Tecnología, dinamismo. |
+| Azul de texto | `#1D4ED8` | Texto pequeño y botones sobre fondo claro. |
 | Gris claro | `#CBD5E1` | Bordes, separadores, texto secundario sobre oscuro. |
 | Blanco | `#F8FAFC` | Fondos claros y tinta sobre oscuro. |
 
 El azul acento no debe usarse como fondo de grandes superficies ni para texto largo.
+
+**Por qué hay dos azules.** `#3B82F6` sobre blanco da una relación de contraste de
+3,1:1, y el texto pequeño necesita 4,5:1 para cumplir WCAG AA. Para texto y botones
+sobre fondo claro se usa `#1D4ED8`, que es el mismo azul oscurecido y llega a 6,3:1.
+El acento de marca sigue siendo `#3B82F6`: el punto del isotipo no es texto y no le
+aplica el criterio.
 
 ## Tipografía
 
@@ -91,7 +98,9 @@ que están ajustados para ese tamaño.
 
 ## Iconos y social
 
-- `brand/favicon/favicon.svg` + `favicon.ico` (16→256 px) + `favicon-32/48.png`.
+- `brand/favicon/favicon.svg` + `favicon.ico` (16, 32 y 48 px) + `favicon-32/48.png`.
+  El `.ico` no lleva 128 ni 256: ningún navegador los pide teniendo el SVG, y
+  multiplicaban por 24 el peso del archivo.
 - `brand/favicon/app-icon.svg` y PNG 180/192/512/1024 — isotipo blanco sobre cuadrado
   azul profundo redondeado (`apple-touch-icon`, PWA, avatares).
 - `brand/social/og-image.png` — 1200 × 630, para Open Graph y Twitter Card.
