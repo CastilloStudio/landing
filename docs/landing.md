@@ -89,3 +89,15 @@ ficheros Markdown, cómodos de editar; y si algún día hace falta una isla inte
 
 Alternativa si se prefiere un único stack con AquaCore: **Next.js estático**, a costa
 de más peso para lo que aquí es una página informativa.
+
+## Despliegue
+
+GitHub Pages, desde `main`, con el workflow `.github/workflows/deploy.yml`.
+
+- `develop` es la rama de trabajo y la rama por defecto del repositorio.
+- `main` es lo publicado; se actualiza por pull request desde `develop`.
+
+**Requisito**: GitHub Pages solo funciona en repositorios públicos mientras la
+organización esté en plan gratuito. Alternativas si se quiere mantener privado:
+Cloudflare Pages o Vercel (ambos con plan gratuito y despliegue desde repo privado),
+o subir la organización a plan Team.

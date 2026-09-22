@@ -6,13 +6,42 @@ Web pública de Castillo Studio: presentación del estudio y casos de éxito.
 
 ## Estado
 
-En preparación. Ahora mismo el repositorio contiene la identidad de marca y el plan
-de la web; el sitio todavía no está montado (el stack está por decidir, ver
-[docs/landing.md](docs/landing.md)).
+Primera versión de la web montada con Astro + Tailwind: hero, qué hacemos, casos de
+éxito, cómo trabajamos y contacto. Pendiente de dominio, buzón de correo y de
+confirmar con los clientes qué se puede contar de cada caso.
+
+## Desarrollo
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # genera dist/
+npm run preview
+```
+
+## Ramas y despliegue
+
+- `develop` — rama de trabajo. Es la rama por defecto del repositorio.
+- `main` — lo que está publicado. Se actualiza por pull request desde `develop`.
+
+Cada push a `main` despliega a GitHub Pages con
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml). Los pull request y los
+push a `develop` solo compilan y pasan `astro check`
+([ci.yml](.github/workflows/ci.yml)).
+
+La URL base la inyecta el workflow (`SITE_URL` y `BASE_PATH`). Cuando haya dominio
+propio hay que cambiar esas dos variables a `https://castillostudio.es` y `/`.
 
 ## Estructura
 
 ```
+src/
+  pages/          Páginas (index.astro)
+  components/     Secciones de la landing
+  content/casos/  Casos de éxito en Markdown
+  layouts/        Layout base con SEO y Open Graph
+  styles/         Tokens de marca sobre Tailwind
+public/           Favicons y og-image — GENERADOS por npm run brand
 brand/            Pack de marca — GENERADO, no editar a mano
   svg/            Logotipos vectoriales (6 lockups x 6 variantes)
   png/            Los mismos en PNG (3000 px; isotipo 1024 px)

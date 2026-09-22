@@ -1,0 +1,47 @@
+---
+const PASOS = [
+  {
+    titulo: 'Entender el problema',
+    texto:
+      'Una conversación sin compromiso y, si hace falta, un rato mirando cómo trabajas hoy. De ahí sale el alcance y un presupuesto cerrado.',
+  },
+  {
+    titulo: 'Prototipo pronto',
+    texto:
+      'Algo que se pueda tocar en semanas, no en meses. Sirve para confirmar que vamos donde toca antes de que salga caro cambiar de idea.',
+  },
+  {
+    titulo: 'Producción',
+    texto:
+      'Desarrollo, pruebas, despliegue e instalación. Con la parte aburrida incluida: copias, actualizaciones, cifrado y documentación de uso.',
+  },
+  {
+    titulo: 'El día después',
+    texto:
+      'Mantenimiento y evolución. Quien lo construyó es quien lo atiende, así que no hay traspaso ni curva de aprendizaje de por medio.',
+  },
+];
+---
+
+<section id="proceso" class="scroll-mt-20 bg-navy py-24 text-bone sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="eyebrow text-blue-soft">Cómo trabajamos</p>
+    <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
+      Sin sorpresas y sin humo.
+    </h2>
+
+    <ol class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        PASOS.map((paso, i) => (
+          <li class="border-t border-white/15 pt-6">
+            <span class="font-display text-sm text-blue-soft">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-3 font-display text-xl font-normal">{paso.titulo}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-grey">{paso.texto}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

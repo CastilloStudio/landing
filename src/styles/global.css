@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/montserrat';
+@import '@fontsource-variable/inter';
+
+/* Tokens de marca — ver docs/marca.md */
+@theme {
+  --color-navy: #0f172a;
+  --color-navy-soft: #1e293b;
+  --color-blue: #3b82f6;
+  --color-blue-soft: #60a5fa;
+  --color-grey: #cbd5e1;
+  --color-bone: #f8fafc;
+
+  --font-display: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bone);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Mayúsculas con tracking amplio: el gesto tipográfico de la marca. */
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+  }
+
+  .titular {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

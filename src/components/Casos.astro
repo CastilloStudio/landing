@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const casos = (await getCollection('casos')).sort((a, b) => a.data.orden - b.data.orden);
+const contenidos = await Promise.all(
+  casos.map(async (caso) => ({ caso, Body: (await render(caso)).Content })),
+);
+---
+
+<section id="casos" class="scroll-mt-20 bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="eyebrow text-blue">Casos</p>
+    <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
+      Cosas que ya están funcionando.
+    </h2>
+    <p class="mt-6 max-w-2xl leading-relaxed text-slate-600">
+      No son maquetas ni pruebas de concepto: son productos en uso, con su
+      instalador, su despliegue y su mantenimiento.
+    </p>
+
+    <div class="mt-16 space-y-12">
+      {
+        contenidos.map(({ caso, Body }) => (
+          <article class="overflow-hidden rounded-2xl border border-grey/60">
+            <div class="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div class="p-8 sm:p-12">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+                  <h3 class="font-display text-3xl font-normal">{caso.data.nombre}</h3>
+                  <span class="eyebrow text-slate-400">{caso.data.sector}</span>
+                </div>
+
+                <p class="titular mt-5 text-xl text-navy sm:text-2xl">
+                  {caso.data.titular}
+                </p>
+
+                <p class="mt-6 leading-relaxed text-slate-600">{caso.data.resumen}</p>
+
+                <div class="prose-sm mt-6 space-y-4 leading-relaxed text-slate-600">
+                  <Body />
+                </div>
+
+                <ul class="mt-8 flex flex-wrap gap-2">
+                  {caso.data.stack.map((t) => (
+                    <li class="rounded-full bg-bone px-3 py-1 text-xs text-slate-600 ring-1 ring-grey/70 ring-inset">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+
+                {caso.data.web && (
+                  <a
+                    href={caso.data.web}
+                    rel="noopener"
+                    class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue hover:underline"
+                  >
+                    Ver el proyecto
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
+              </div>
+
+              <div class="flex flex-col justify-between gap-10 bg-navy p-8 text-bone sm:p-12">
+                <dl class="space-y-8">
+                  {caso.data.hitos.map((hito) => (
+                    <div>
+                      <dt class="font-display text-3xl font-light text-blue-soft">
+                        {hito.dato}
+                      </dt>
+                      <dd class="mt-1 text-sm text-grey">{hito.pie}</dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <p class="border-t border-white/10 pt-6 text-sm leading-relaxed text-grey">
+                  {caso.data.aprendizaje}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

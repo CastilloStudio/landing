@@ -1,0 +1,39 @@
+---
+// Los SVG se insertan en línea desde brand/, que es la salida de `npm run brand`.
+// Así el logotipo hereda el color del CSS solo cuando queremos y no hay una
+// petición extra por cada logo.
+import horizontalColor from '../../brand/svg/castillo-studio-horizontal-color.svg?raw';
+import horizontalBlanco from '../../brand/svg/castillo-studio-horizontal-blanco.svg?raw';
+import principalBlanco from '../../brand/svg/castillo-studio-principal-blanco.svg?raw';
+import isotipoColor from '../../brand/svg/castillo-studio-isotipo-color.svg?raw';
+import isotipoBlanco from '../../brand/svg/castillo-studio-isotipo-blanco.svg?raw';
+
+const LOGOS = {
+  'horizontal-color': horizontalColor,
+  'horizontal-blanco': horizontalBlanco,
+  'principal-blanco': principalBlanco,
+  'isotipo-color': isotipoColor,
+  'isotipo-blanco': isotipoBlanco,
+} as const;
+
+interface Props {
+  name: keyof typeof LOGOS;
+  class?: string;
+  /** El punto azul se conserva aunque el lockup sea monocromo blanco. */
+  acento?: boolean;
+}
+
+const { name, class: className = '', acento = false } = Astro.props;
+
+// Se quitan width/height para que el tamaño lo mande el CSS; el viewBox queda.
+let svg = LOGOS[name]
+  .replace(/ width="[\d.]+" height="[\d.]+"/, '')
+  .replace('<svg', `<svg class="${className}"`);
+if (acento) {
+  // En las variantes monocromas el punto comparte color con el trazo; se
+  // devuelve al azul de marca sin tocar el resto del dibujo.
+  svg = svg.replace(/<circle([^>]*)fill="#F8FAFC"/, '<circle$1fill="#3B82F6"');
+}
+---
+
+<Fragment set:html={svg} />

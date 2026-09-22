@@ -17,6 +17,7 @@ import pngToIco from 'png-to-ico';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'brand');
+const PUBLIC = join(ROOT, 'public');
 const FONT_CACHE = join(ROOT, '.cache', 'fonts');
 
 /* ------------------------------------------------------------------ *
@@ -547,6 +548,21 @@ async function main() {
     .png({ compressionLevel: 9 })
     .toFile(join(OUT, 'social', 'og-image.png'));
 
+  /* ---- copia a public/ lo que sirve la web ---- */
+
+  mkdirSync(PUBLIC, { recursive: true });
+  const toPublic = [
+    ['favicon/favicon.ico', 'favicon.ico'],
+    ['favicon/favicon.svg', 'favicon.svg'],
+    ['favicon/app-icon-180.png', 'apple-touch-icon.png'],
+    ['favicon/app-icon-192.png', 'icon-192.png'],
+    ['favicon/app-icon-512.png', 'icon-512.png'],
+    ['social/og-image.png', 'og-image.png'],
+  ];
+  for (const [from, to] of toPublic) {
+    writeFileSync(join(PUBLIC, to), readFileSync(join(OUT, from)));
+  }
+
   const sheet = contactSheet(tiles);
   writeFileSync(join(OUT, 'contact-sheet.svg'), sheet);
   await sharp(Buffer.from(sheet)).resize({ width: 2400 }).png({ compressionLevel: 9 }).toFile(join(OUT, 'contact-sheet.png'));
@@ -554,6 +570,7 @@ async function main() {
   console.log(`✔ ${written.length} lockups generados en brand/svg y brand/png`);
   console.log('✔ favicon.ico, iconos de app y og-image.png');
   console.log('✔ brand/contact-sheet.png');
+  console.log(`✔ ${toPublic.length} archivos copiados a public/`);
 }
 
 main().catch((err) => {

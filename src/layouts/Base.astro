@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Castillo Studio — Tecnología para un mundo real',
+  description = 'Estudio de desarrollo de software y hardware. Diseñamos, construimos y mantenemos productos completos: del sensor al panel, del código al instalador.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+// Los assets de public/ cuelgan de BASE_URL, que no siempre es la raíz.
+const asset = (ruta: string) => `${import.meta.env.BASE_URL}/${ruta}`.replace(/\/{2,}/g, '/');
+const og = new URL(asset('og-image.png'), Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" href={asset('favicon.ico')} sizes="32x32" />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
+    <meta name="theme-color" content="#0F172A" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Castillo Studio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og} />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Castillo Studio',
+        url: Astro.site?.toString(),
+        logo: new URL(asset('icon-512.png'), Astro.site).toString(),
+        slogan: 'Tecnología para un mundo real',
+        description,
+      })}
+    />
+  </head>
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-navy focus:px-4 focus:py-2 focus:text-bone"
+    >
+      Saltar al contenido
+    </a>
+    <slot />
+  </body>
+</html>

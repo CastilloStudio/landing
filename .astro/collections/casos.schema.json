@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "orden": {
+      "type": "number"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "titular": {
+      "type": "string"
+    },
+    "resumen": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "aprendizaje": {
+      "type": "string"
+    },
+    "stack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hitos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dato": {
+            "type": "string"
+          },
+          "pie": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dato",
+          "pie"
+        ]
+      }
+    },
+    "web": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "orden",
+    "nombre",
+    "titular",
+    "resumen",
+    "sector",
+    "aprendizaje",
+    "stack",
+    "hitos"
+  ]
+}

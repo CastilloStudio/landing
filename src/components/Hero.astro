@@ -1,0 +1,51 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../config';
+---
+
+<section class="relative isolate overflow-hidden bg-navy text-bone">
+  <!-- El isotipo, ampliado y muy tenue, hace de textura de fondo. -->
+  <div
+    class="pointer-events-none absolute -right-24 -bottom-32 w-[38rem] opacity-[0.04] sm:-right-10 md:w-[52rem]"
+    aria-hidden="true"
+  >
+    <Logo name="isotipo-blanco" class="h-auto w-full" />
+  </div>
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_60%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-6 pt-36 pb-24 sm:pt-44 sm:pb-32">
+    <p class="eyebrow text-blue-soft">Software · Hardware · Producto</p>
+
+    <h1 class="titular mt-6 max-w-4xl text-4xl leading-[1.1] sm:text-6xl lg:text-7xl">
+      {SITE.claim}
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-lg leading-relaxed text-grey sm:text-xl">
+      Somos un estudio de desarrollo. Diseñamos, construimos y mantenemos
+      productos completos —del sensor al panel, del código al instalador— para
+      empresas pequeñas y para personas que tienen un problema concreto que
+      resolver.
+    </p>
+
+    <div class="mt-12 flex flex-wrap items-center gap-4">
+      <a
+        href="#contacto"
+        class="rounded-full bg-blue px-7 py-3.5 font-medium text-bone transition-colors hover:bg-blue-soft"
+      >
+        Cuéntanos tu proyecto
+      </a>
+      <a
+        href="#casos"
+        class="rounded-full border border-grey/30 px-7 py-3.5 transition-colors hover:border-grey hover:bg-white/5"
+      >
+        Ver casos
+      </a>
+    </div>
+  </div>
+
+  <div class="relative h-px bg-gradient-to-r from-transparent via-grey/25 to-transparent"></div>
+</section>

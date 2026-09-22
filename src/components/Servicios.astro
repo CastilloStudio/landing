@@ -1,0 +1,44 @@
+---
+// Las tres ideas vienen del brand board: soluciones / para personas / con impacto.
+const BLOQUES = [
+  {
+    titulo: 'Soluciones',
+    entradilla: 'Software y hardware',
+    texto:
+      'Aplicaciones web y de escritorio, plataformas cloud, firmware y electrónica a medida. Si el problema cruza de un mundo al otro, no hace falta buscar un segundo proveedor.',
+  },
+  {
+    titulo: 'Para personas',
+    entradilla: 'Particulares y empresas',
+    texto:
+      'Trabajamos con quien no tiene departamento de sistemas. Hablamos claro, enseñamos avances pronto y explicamos qué se puede y qué no antes de facturarlo.',
+  },
+  {
+    titulo: 'Con impacto',
+    entradilla: 'Simple, cercano, real',
+    texto:
+      'Un producto está terminado cuando se instala solo, se actualiza solo y hace la copia de seguridad solo. Hasta ahí llegamos, no hasta la demo.',
+  },
+];
+---
+
+<section id="que-hacemos" class="scroll-mt-20 bg-bone py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="eyebrow text-blue">Qué hacemos</p>
+    <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
+      Tres cosas, y las tres de principio a fin.
+    </h2>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-2xl bg-grey/60 sm:grid-cols-3">
+      {
+        BLOQUES.map((bloque) => (
+          <article class="bg-white p-8 sm:p-10">
+            <span class="eyebrow text-slate-500">{bloque.entradilla}</span>
+            <h3 class="mt-4 font-display text-2xl font-normal">{bloque.titulo}</h3>
+            <p class="mt-4 leading-relaxed text-slate-600">{bloque.texto}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
