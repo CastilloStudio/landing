@@ -42,6 +42,7 @@ src/
   content/casos/  Casos de éxito en Markdown
   layouts/        Layout base con SEO y Open Graph
   styles/         Tokens de marca sobre Tailwind
+  pages/robots.txt.ts, manifest.json.ts — generados para seguir al dominio
 public/           Favicons y og-image — GENERADOS por npm run brand
 brand/            Pack de marca — GENERADO, no editar a mano
   svg/            Logotipos vectoriales (6 lockups x 6 variantes)
@@ -70,6 +71,17 @@ Las fuentes se descargan a `.cache/fonts/` la primera vez (no se versionan).
 
 Cualquier cambio en el logotipo se hace en `scripts/build-brand.mjs` y se regenera
 todo el pack de una vez.
+
+## SEO y tarjetas de enlace
+
+La página sale con 100 en accesibilidad, buenas prácticas y SEO en Lighthouse. Lleva
+canonical, `robots`, sitemap (`@astrojs/sitemap`), `robots.txt`, manifiesto web,
+datos estructurados (`ProfessionalService` + `WebSite`) y las etiquetas Open Graph y
+Twitter completas, con la imagen de 1200x630 y sus dimensiones declaradas para que
+WhatsApp y Telegram pinten la tarjeta grande.
+
+La imagen de la tarjeta se regenera con `npm run brand`
+(`brand/social/og-image.png`).
 
 ## Marca
 

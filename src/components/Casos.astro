@@ -9,7 +9,7 @@ const contenidos = await Promise.all(
 
 <section id="casos" class="scroll-mt-20 bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-6xl px-6">
-    <p class="eyebrow text-blue">Casos</p>
+    <p class="eyebrow text-blue-ink">Casos</p>
     <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
       Cosas que ya están funcionando.
     </h2>
@@ -26,7 +26,7 @@ const contenidos = await Promise.all(
               <div class="p-8 sm:p-12">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                   <h3 class="font-display text-3xl font-normal">{caso.data.nombre}</h3>
-                  <span class="eyebrow text-slate-400">{caso.data.sector}</span>
+                  <span class="eyebrow text-slate-500">{caso.data.sector}</span>
                 </div>
 
                 <p class="titular mt-5 text-xl text-navy sm:text-2xl">
@@ -51,7 +51,7 @@ const contenidos = await Promise.all(
                   <a
                     href={caso.data.web}
                     rel="noopener"
-                    class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue hover:underline"
+                    class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue-ink hover:underline"
                   >
                     {caso.data.webTexto}
                     <span aria-hidden="true">→</span>

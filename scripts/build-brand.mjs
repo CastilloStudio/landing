@@ -508,7 +508,9 @@ async function main() {
   });
   writeFileSync(join(OUT, 'favicon', 'app-icon.svg'), appSvg);
 
-  const icoSizes = [16, 32, 48, 64, 128, 256];
+  // Solo los tamaños que un navegador pide de verdad: un .ico con 128 y 256
+  // dentro pesa más de 300 KB y no aporta nada frente al favicon.svg.
+  const icoSizes = [16, 32, 48];
   const icoBuffers = [];
   for (const size of icoSizes) {
     const buf = await sharp(Buffer.from(faviconSvg)).resize(size, size).png().toBuffer();

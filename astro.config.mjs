@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // El workflow de despliegue inyecta estas dos variables; en local valen los
@@ -11,6 +12,7 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'ignore',
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

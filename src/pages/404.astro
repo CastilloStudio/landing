@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import { SITE } from '../config';
+---
+
+<Base title={`Página no encontrada — ${SITE.nombre}`} noindex>
+  <main
+    id="contenido"
+    class="flex min-h-screen flex-col items-center justify-center bg-navy px-6 text-center text-bone"
+  >
+    <Logo name="isotipo-blanco" acento class="h-24 w-auto" />
+
+    <p class="eyebrow mt-12 text-blue-soft">Error 404</p>
+
+    <h1 class="titular mt-5 max-w-xl text-3xl sm:text-5xl">
+      Esta página no existe.
+    </h1>
+
+    <p class="mt-6 max-w-md leading-relaxed text-grey">
+      O la hemos movido, o el enlace venía mal. Las dos cosas se arreglan
+      volviendo al principio.
+    </p>
+
+    <a
+      href={import.meta.env.BASE_URL}
+      class="mt-10 rounded-full bg-blue-ink px-7 py-3.5 font-medium text-bone transition-colors hover:bg-blue"
+    >
+      Volver al inicio
+    </a>
+  </main>
+</Base>
