@@ -10,13 +10,15 @@ export const SITE = {
   frase: 'Hacemos que la tecnología funcione para ti',
   email: 'emiliocastillogonzalez@gmail.com',
   github: 'https://github.com/CastilloStudio',
-  // BORRADOR: revisar y personalizar antes de publicar.
+  // BORRADOR: revisar antes de publicar. Falta el perfil de Alejandro y las fotos.
   quien: {
-    nombre: 'Emilio Castillo',
-    rol: 'Fundador y desarrollador',
+    fundadores: [
+      { nombre: 'Emilio Castillo', rol: 'Fundador · Desarrollo y producto' },
+      { nombre: 'Alejandro Castillo', rol: 'Fundador' },
+    ],
     parrafos: [
       'Castillo Studio es un estudio pequeño, y lo es a propósito. Quien coge el teléfono es quien escribe el código, diseña la placa y hace el despliegue. No hay comercial que prometa una cosa y un equipo que entregue otra.',
-      'Vengo del desarrollo de software y me metí en el hardware por necesidad: había proyectos que no se podían terminar sin bajar al sensor. Eso es lo que hoy distingue al estudio — pocos sitios te cubren desde el firmware hasta la factura del cliente.',
+      'Somos dos: suficientes para repartirnos el trabajo, y los bastante pocos para que nadie se esconda detrás de un proceso. Cada proyecto lo lleva una persona con nombre, de principio a fin.',
     ],
   },
   nav: [

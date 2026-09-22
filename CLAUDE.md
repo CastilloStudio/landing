@@ -83,7 +83,8 @@ frontmatter del esquema. No hace falta tocar código.
 
 ## Contexto del negocio
 
-Castillo Studio es un estudio de desarrollo de software **y hardware**. El
+Castillo Studio lo fundan **Emilio Castillo y Alejandro Castillo**. Es un
+estudio de desarrollo de software **y hardware**. El
 argumento de venta es que cubre el recorrido completo —placa, firmware, cloud,
 producto, instalador y soporte— y hay prueba de ello en la propia organización:
 
@@ -105,3 +106,5 @@ Están en `docs/landing.md` y `docs/dominio.md`. Los que más pesan:
   Los textos están redactados y esperando en `docs/legal.md`.
 - El contacto es un `mailto:` a un Gmail personal. No hay buzón en el dominio.
 - Falta confirmar con los clientes qué se puede contar de cada caso.
+- La sección "quiénes somos" es un borrador: falta el perfil de Alejandro y las
+  fotos de los dos. No inventes trayectorias que no estén respaldadas.

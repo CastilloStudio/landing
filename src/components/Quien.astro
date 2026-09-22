@@ -7,24 +7,29 @@ const { quien } = SITE;
 
 <section id="quien" class="scroll-mt-20 bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-6xl px-6">
-    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-      <div>
-        <p class="eyebrow text-blue-ink">Quién está detrás</p>
-        <!-- Sin foto todavía: el isotipo hace de marca de agua para que la
-             columna no quede vacía. Sustituir por un retrato cuando lo haya. -->
-        <div class="mt-8 flex aspect-square max-w-xs items-center justify-center rounded-2xl bg-bone ring-1 ring-grey/60 ring-inset">
-          <Logo name="isotipo-color" class="h-20 w-auto opacity-25" />
-        </div>
-        <p class="mt-6 font-display text-xl">{quien.nombre}</p>
-        <p class="text-sm text-slate-500">{quien.rol}</p>
-      </div>
+    <p class="eyebrow text-blue-ink">Quiénes somos</p>
+    <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
+      Un estudio pequeño, a propósito.
+    </h2>
 
-      <div class="lg:pt-16">
-        <h2 class="titular text-3xl sm:text-5xl">Un estudio pequeño, a propósito.</h2>
-        <div class="mt-8 space-y-6 text-lg leading-relaxed text-slate-600">
-          {quien.parrafos.map((p) => <p>{p}</p>)}
-        </div>
-      </div>
+    <div class="mt-8 max-w-2xl space-y-6 text-lg leading-relaxed text-slate-600">
+      {quien.parrafos.map((p) => <p>{p}</p>)}
     </div>
+
+    <ul class="mt-16 grid gap-8 sm:grid-cols-2 lg:max-w-3xl">
+      {
+        quien.fundadores.map((persona) => (
+          <li>
+            {/* Sin retratos todavía: el isotipo ocupa el hueco para que las
+                fichas no queden vacías. Sustituir cuando haya fotos. */}
+            <div class="flex aspect-[4/3] items-center justify-center rounded-2xl bg-bone ring-1 ring-grey/60 ring-inset">
+              <Logo name="isotipo-color" class="h-16 w-auto opacity-20" />
+            </div>
+            <p class="mt-5 font-display text-xl">{persona.nombre}</p>
+            <p class="mt-1 text-sm text-slate-500">{persona.rol}</p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
