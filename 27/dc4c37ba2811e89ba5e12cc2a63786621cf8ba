@@ -1,0 +1,27 @@
+.astro/collections/casos.schema.json
+  s_09f741c306164a::t_42cd05af05cf32 50-53
+docs/dominio.md
+  s_09f741c306164a::t_13e5119ec7c360 36-52,57
+src/components/Casos.astro
+  s_09f741c306164a::t_a494b7690577cb 56
+src/content.config.ts
+  s_09f741c306164a::t_f145b1b03a4403 17
+src/content/casos/bitacora.md
+  s_09f741c306164a::t_dc8a0182346ee1 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "27dc4c37ba2811e89ba5e12cc2a63786621cf8ba",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
