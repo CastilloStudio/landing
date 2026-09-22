@@ -3,6 +3,8 @@ import Logo from './Logo.astro';
 import { SITE } from '../config';
 
 const anio = new Date().getFullYear();
+const inicio = import.meta.env.BASE_URL;
+const ruta = (r: string) => `${inicio}${r}`.replace(/\/{2,}/g, '/');
 ---
 
 <footer class="bg-navy text-grey">
@@ -16,6 +18,10 @@ const anio = new Date().getFullYear();
       <div class="flex flex-col gap-2 text-sm sm:items-end">
         <a href={`mailto:${SITE.email}`} class="hover:text-bone">{SITE.email}</a>
         <a href={SITE.github} rel="noopener" class="hover:text-bone">GitHub</a>
+        <div class="flex gap-4">
+          <a href={ruta('aviso-legal')} class="hover:text-bone">Aviso legal</a>
+          <a href={ruta('privacidad')} class="hover:text-bone">Privacidad</a>
+        </div>
         <p class="text-slate-400">© {anio} {SITE.nombre}</p>
       </div>
     </div>

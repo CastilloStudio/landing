@@ -1,0 +1,85 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { SITE } from '../config';
+
+const { legal } = SITE;
+---
+
+<Legal titulo="Política de privacidad" actualizado="septiembre de 2026">
+  <h2>Responsable del tratamiento</h2>
+  <ul>
+    <li><strong>Responsable:</strong> {legal.titular} ({legal.nif})</li>
+    <li><strong>Domicilio:</strong> {legal.domicilio}</li>
+    <li><strong>Contacto:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+  </ul>
+
+  <h2>Qué datos se tratan</h2>
+  <p>
+    Este sitio <strong>no tiene formularios ni registro de usuarios</strong>. Solo se
+    tratan datos personales cuando alguien escribe voluntariamente al correo de contacto:
+    en ese caso, los datos son los que la persona decida incluir en su mensaje
+    —normalmente nombre, dirección de correo y la información del proyecto que quiere
+    comentar—.
+  </p>
+
+  <h2>Con qué finalidad y con qué base jurídica</h2>
+  <ul>
+    <li>
+      <strong>Responder a la consulta y, en su caso, preparar un presupuesto.</strong> La
+      base jurídica es la aplicación de medidas precontractuales a petición del interesado
+      (art. 6.1.b del RGPD).
+    </li>
+    <li>
+      <strong>Mantener la correspondencia comercial posterior.</strong> Base jurídica: el
+      interés legítimo en gestionar la relación con quien ha contactado (art. 6.1.f).
+    </li>
+  </ul>
+  <p>
+    No se realizan decisiones automatizadas ni elaboración de perfiles, y los datos no se
+    utilizan para envíos comerciales no solicitados.
+  </p>
+
+  <h2>Cuánto tiempo se conservan</h2>
+  <p>
+    Los mensajes se conservan mientras dure la relación y, después, durante los plazos de
+    prescripción legal que resulten aplicables. Pasado ese tiempo se eliminan.
+  </p>
+
+  <h2>Destinatarios</h2>
+  <p>
+    No se ceden datos a terceros salvo obligación legal. Sí intervienen proveedores que
+    actúan como encargados del tratamiento por la naturaleza técnica del servicio:
+  </p>
+  <ul>
+    <li>
+      <strong>GitHub, Inc.</strong> — alojamiento del sitio (GitHub Pages). Registra datos
+      técnicos de conexión, como la dirección IP, por seguridad y para servir las páginas.
+    </li>
+    <li>
+      <strong>Google LLC</strong> — proveedor del servicio de correo electrónico desde el
+      que se atienden las consultas.
+    </li>
+  </ul>
+  <p>
+    Ambos pueden tratar datos fuera del Espacio Económico Europeo, amparados en las
+    garantías previstas en el capítulo V del RGPD.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    Este sitio <strong>no utiliza cookies</strong> ni tecnologías equivalentes de
+    seguimiento, ni almacena información en el dispositivo del visitante. Por eso no verás
+    ningún banner de consentimiento.
+  </p>
+
+  <h2>Tus derechos</h2>
+  <p>
+    Puedes solicitar el acceso a tus datos, su rectificación o supresión, la limitación u
+    oposición al tratamiento y la portabilidad, escribiendo a
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a> e identificándote debidamente.
+  </p>
+  <p>
+    Si consideras que el tratamiento no se ajusta a la normativa, puedes reclamar ante la
+    <a href="https://www.aepd.es/" rel="noopener">Agencia Española de Protección de Datos</a>.
+  </p>
+</Legal>

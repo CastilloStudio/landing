@@ -5,6 +5,7 @@ const casos = (await getCollection('casos')).sort((a, b) => a.data.orden - b.dat
 const contenidos = await Promise.all(
   casos.map(async (caso) => ({ caso, Body: (await render(caso)).Content })),
 );
+const inicio = import.meta.env.BASE_URL;
 ---
 
 <section id="casos" class="scroll-mt-20 bg-white py-24 sm:py-32">
@@ -47,16 +48,25 @@ const contenidos = await Promise.all(
                   ))}
                 </ul>
 
-                {caso.data.web && (
+                <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
                   <a
-                    href={caso.data.web}
-                    rel="noopener"
-                    class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue-ink hover:underline"
+                    href={`${inicio}casos/${caso.id}`.replace(/\/{2,}/g, '/')}
+                    class="inline-flex items-center gap-2 text-sm font-medium text-blue-ink hover:underline"
                   >
-                    {caso.data.webTexto}
+                    Leer el caso
                     <span aria-hidden="true">→</span>
                   </a>
-                )}
+                  {caso.data.web && (
+                    <a
+                      href={caso.data.web}
+                      rel="noopener"
+                      class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-navy hover:underline"
+                    >
+                      {caso.data.webTexto}
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                </div>
               </div>
 
               <div class="flex flex-col justify-between gap-10 bg-navy p-8 text-bone sm:p-12">

@@ -1,0 +1,30 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../config';
+
+const { quien } = SITE;
+---
+
+<section id="quien" class="scroll-mt-20 bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      <div>
+        <p class="eyebrow text-blue-ink">Quién está detrás</p>
+        <!-- Sin foto todavía: el isotipo hace de marca de agua para que la
+             columna no quede vacía. Sustituir por un retrato cuando lo haya. -->
+        <div class="mt-8 flex aspect-square max-w-xs items-center justify-center rounded-2xl bg-bone ring-1 ring-grey/60 ring-inset">
+          <Logo name="isotipo-color" class="h-20 w-auto opacity-25" />
+        </div>
+        <p class="mt-6 font-display text-xl">{quien.nombre}</p>
+        <p class="text-sm text-slate-500">{quien.rol}</p>
+      </div>
+
+      <div class="lg:pt-16">
+        <h2 class="titular text-3xl sm:text-5xl">Un estudio pequeño, a propósito.</h2>
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-slate-600">
+          {quien.parrafos.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

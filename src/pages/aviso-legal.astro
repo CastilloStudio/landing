@@ -1,0 +1,77 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { SITE } from '../config';
+
+const { legal } = SITE;
+const dominio = Astro.site?.host ?? 'castillostudio.es';
+---
+
+<Legal titulo="Aviso legal" actualizado="septiembre de 2026">
+  <h2>Titular del sitio web</h2>
+  <p>
+    En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la
+    información y de comercio electrónico (LSSI-CE), se informa de los datos del titular
+    de este sitio web:
+  </p>
+  <ul>
+    <li><strong>Titular:</strong> {legal.titular}</li>
+    <li><strong>NIF:</strong> {legal.nif}</li>
+    <li><strong>Domicilio a efectos de notificaciones:</strong> {legal.domicilio}</li>
+    <li><strong>Correo electrónico:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+    <li><strong>Actividad:</strong> {legal.actividad}</li>
+    <li><strong>Nombre comercial:</strong> {SITE.nombre}</li>
+  </ul>
+
+  <h2>Objeto</h2>
+  <p>
+    Este sitio web tiene una finalidad informativa: presentar los servicios de {SITE.nombre}
+    y los proyectos realizados. No se comercializan productos ni se contratan servicios a
+    través de él.
+  </p>
+
+  <h2>Condiciones de uso</h2>
+  <p>
+    El acceso a <strong>{dominio}</strong> es gratuito y no requiere registro. Al navegar
+    por él, el usuario se compromete a hacer un uso conforme a la ley y a no realizar
+    actividades que puedan dañar, sobrecargar o impedir el funcionamiento normal del sitio.
+  </p>
+
+  <h2>Propiedad intelectual e industrial</h2>
+  <p>
+    Los contenidos de este sitio —textos, identidad visual, logotipos, código y
+    documentación— son titularidad de {legal.titular}, salvo que se indique lo contrario,
+    y están protegidos por la normativa de propiedad intelectual e industrial. Queda
+    prohibida su reproducción, distribución o transformación sin autorización expresa.
+  </p>
+  <p>
+    Las marcas y nombres de terceros que aparecen en los casos de éxito pertenecen a sus
+    respectivos titulares y se mencionan únicamente a título identificativo.
+  </p>
+
+  <h2>Responsabilidad</h2>
+  <p>
+    {legal.titular} no se hace responsable de los daños que puedan derivarse de errores u
+    omisiones en los contenidos, ni de la indisponibilidad temporal del sitio por causas
+    técnicas o de fuerza mayor. La información publicada puede modificarse sin previo
+    aviso.
+  </p>
+  <p>
+    Este sitio contiene enlaces a páginas de terceros. {legal.titular} no controla sus
+    contenidos ni asume responsabilidad alguna sobre ellos.
+  </p>
+
+  <h2>Protección de datos</h2>
+  <p>
+    El tratamiento de los datos personales se describe en la
+    <a href={`${import.meta.env.BASE_URL}privacidad`.replace(/\/{2,}/g, '/')}>
+      política de privacidad
+    </a>.
+  </p>
+
+  <h2>Legislación aplicable</h2>
+  <p>
+    Esta relación se rige por la legislación española. Para cualquier controversia, las
+    partes se someten a los juzgados y tribunales del domicilio del titular, salvo cuando
+    la normativa de consumo establezca otro fuero.
+  </p>
+</Legal>
