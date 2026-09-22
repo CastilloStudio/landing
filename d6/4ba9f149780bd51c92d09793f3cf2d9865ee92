@@ -1,0 +1,51 @@
+.astro/content-assets.mjs
+  s_09f741c306164a::t_8c3da3b55e0d3b 1
+.github/workflows/ci.yml
+  s_09f741c306164a::t_5b1b32011a6bea 20-28
+.github/workflows/enlaces.yml
+  s_09f741c306164a::t_078bf7998a2e33 1-37
+docs/landing.md
+  s_09f741c306164a::t_7c2f2d8c7ea096 73-85
+src/components/Casos.astro
+  s_09f741c306164a::t_592a428978e8b0 8,51,53-54,56,59-69
+src/components/Footer.astro
+  s_09f741c306164a::t_e53da0a7543033 6-7,21-24
+src/components/Quien.astro
+  s_09f741c306164a::t_be7226a284b78b 1-30
+src/config.ts
+  s_09f741c306164a::t_bdc3cf2f26f4f2 13-32,37
+src/layouts/Legal.astro
+  s_09f741c306164a::t_f04d7858f4ad8b 1-40
+src/pages/aviso-legal.astro
+  s_c6ad40700cd4cc::t_c4381e37a4b210 1-77
+src/pages/index.astro
+  s_09f741c306164a::t_53a3d00b29db40 8,20
+src/pages/casos/[id].astro
+  s_09f741c306164a::t_2ab8d09f0b20b6 1-107
+src/pages/privacidad.astro
+  s_09f741c306164a::t_02235b8207329b 1-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d64ba9f149780bd51c92d09793f3cf2d9865ee92",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    },
+    "s_c6ad40700cd4cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "28a71f27-39de-4729-b94f-60b4e658e196",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
