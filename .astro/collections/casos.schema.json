@@ -47,6 +47,10 @@
     "web": {
       "type": "string"
     },
+    "webTexto": {
+      "default": "Ver el proyecto",
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

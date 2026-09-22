@@ -33,11 +33,28 @@ Opcionalmente, los mismos en IPv6 (AAAA):
 Si el panel de DonDominio no deja poner registros A en la raíz porque ya hay un
 ANAME, vale con cambiar ese ANAME a `castillostudio.github.io`.
 
+## Subdominios de proyectos
+
+`bitacora.castillostudio.es` es el sitio de descargas de Bitácora
+(repositorio público `CastilloStudio/bitacora-descargas`, servido por GitHub Pages).
+
+**Está roto**: el CNAME apunta a `emiliocastilo.github.io`, pero el repositorio se
+transfirió a la organización, así que ahora lo sirve `castillostudio.github.io`. De
+ahí el 503.
+
+| Nombre | Tipo | Ahora | Ponlo en |
+|---|---|---|---|
+| `bitacora` | CNAME | `emiliocastilo.github.io.` | `castillostudio.github.io.` |
+
+`descargas.castillostudio.es` no existe: solo resuelve porque el comodín lo manda al
+parking. Si se quiere usar ese nombre en vez de `bitacora`, hay que crear su CNAME y
+cambiar el dominio propio en los ajustes de Pages de `bitacora-descargas`.
+
 ## Qué hacer con el resto
 
 | Registro | Qué hacer | Por qué |
 |---|---|---|
-| `*` CNAME → parking | **Borrar** | El comodín manda cualquier subdominio no definido al parking de DonDominio. |
+| `*` CNAME → parking | **Borrar** | El comodín manda cualquier subdominio no definido al parking de DonDominio. Los subdominios que se usan de verdad (`www`, `bitacora`) tienen su propio registro, así que no dependen de él. |
 | `ftp`, `bbdd` CNAME | Borrar | Solo sirven con el hosting de DonDominio, que no se usa. |
 | `mail`, `smtp`, `imap`, `pop`, `pop3`, `webmail` CNAME | Dejar | No estorban a Pages. Harán falta el día que se active el correo del dominio. |
 | `TXT v=spf1 include:spf.dondominio.com` | Dejar | Es el SPF del correo de DonDominio. Si al final el correo va por otro sitio (Google, Zoho, Fastmail), se sustituye por el SPF de ese proveedor. |

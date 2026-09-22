@@ -14,6 +14,7 @@ const casos = defineCollection({
     stack: z.array(z.string()),
     hitos: z.array(z.object({ dato: z.string(), pie: z.string() })),
     web: z.string().optional(),
+    webTexto: z.string().default('Ver el proyecto'),
   }),
 });
 

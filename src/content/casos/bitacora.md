@@ -23,6 +23,8 @@ hitos:
     pie: Instalación y actualizaciones automáticas
   - dato: Meet
     pie: Agenda sincronizada con Google Calendar
+web: https://bitacora.castillostudio.es
+webTexto: Descargar Bitácora
 ---
 
 La parte visible es la agenda y la historia clínica. La que sostiene el día a
