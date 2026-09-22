@@ -98,7 +98,9 @@ que están ajustados para ese tamaño.
 
 ## Iconos y social
 
-- `brand/favicon/favicon.svg` + `favicon.ico` (16→256 px) + `favicon-32/48.png`.
+- `brand/favicon/favicon.svg` + `favicon.ico` (16, 32 y 48 px) + `favicon-32/48.png`.
+  El `.ico` no lleva 128 ni 256: ningún navegador los pide teniendo el SVG, y
+  multiplicaban por 24 el peso del archivo.
 - `brand/favicon/app-icon.svg` y PNG 180/192/512/1024 — isotipo blanco sobre cuadrado
   azul profundo redondeado (`apple-touch-icon`, PWA, avatares).
 - `brand/social/og-image.png` — 1200 × 630, para Open Graph y Twitter Card.
