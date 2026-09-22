@@ -13,7 +13,7 @@ export const SITE = {
   quien: {
     // Los dos hacen lo mismo, así que la disciplina es compartida y no va por
     // persona.
-    disciplina: 'Desarrollo, hardware y producto. Los dos.',
+    disciplina: 'Desarrollo, hardware y producto.',
     fundadores: ['Emilio Castillo', 'Alejandro Castillo'],
     parrafos: [
       'Castillo Studio es un estudio pequeño, y lo es a propósito. Quien coge el teléfono es quien escribe el código, diseña la placa y hace el despliegue. No hay comercial que prometa una cosa y un equipo que entregue otra.',

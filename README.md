@@ -31,7 +31,8 @@ push a `develop` solo compilan y pasan `astro check`
 
 El sitio se publica en **https://castillostudio.es** (dominio propio sobre
 GitHub Pages). El dominio se mantiene con `public/CNAME`, y la URL base la inyecta el
-workflow con `SITE_URL` y `BASE_PATH`.
+workflow con `SITE_URL` y `BASE_PATH`. Los registros DNS están documentados en el
+repositorio interno.
 
 ## Estructura
 
@@ -52,8 +53,6 @@ brand/            Pack de marca — GENERADO, no editar a mano
   referencias/    Brand board original y el primer pack, como referencia histórica
 docs/
   marca.md        Guía de marca: lockups, paleta, tipografía, usos
-  landing.md      Plan de la web: secciones, casos de éxito, decisiones pendientes
-  dominio.md      DNS del dominio propio y pasos para activar HTTPS
 scripts/
   build-brand.mjs Generador del pack de marca
 ```
