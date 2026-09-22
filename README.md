@@ -29,7 +29,7 @@ Cada push a `main` despliega a GitHub Pages con
 push a `develop` solo compilan y pasan `astro check`
 ([ci.yml](.github/workflows/ci.yml)).
 
-El sitio se publica en **https://www.castillostudio.es** (dominio propio sobre
+El sitio se publica en **https://castillostudio.es** (dominio propio sobre
 GitHub Pages). El dominio se mantiene con `public/CNAME`, y la URL base la inyecta el
 workflow con `SITE_URL` y `BASE_PATH`.
 

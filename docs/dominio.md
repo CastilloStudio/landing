@@ -1,18 +1,20 @@
 # Dominio y DNS
 
-El sitio se sirve desde GitHub Pages en **https://www.castillostudio.es**. El dominio
-está en DonDominio, que lo entrega con la zona apuntando a su servidor de parking.
+El sitio se sirve desde GitHub Pages en **https://castillostudio.es** (sin `www`).
+El dominio está en DonDominio.
 
-## Qué hay que cambiar
+## Estado: hecho
 
-Solo dos registros importan para que la web funcione:
-
-| Nombre | Tipo | Valor actual (parking) | Valor correcto |
+| Nombre | Tipo | Valor | Estado |
 |---|---|---|---|
-| `www` | CNAME | `parkingsrv0.dondominio.com.` | `castillostudio.github.io.` |
-| `castillostudio.es` (raíz) | ANAME / A | `parkingsrv0.dondominio.com` | los cuatro registros A de abajo |
+| `castillostudio.es` (raíz) | A | las cuatro IP de GitHub | ✅ resolviendo |
+| `www` | CNAME | `castillostudio.github.io.` | ✅ resolviendo, redirige a la raíz |
 
-Registros A de la raíz (son los de GitHub Pages, fijos y documentados):
+El dominio propio de Pages es la raíz, así que **`public/CNAME` contiene
+`castillostudio.es`**. Ese archivo manda: si dijera `www`, cada despliegue cambiaría
+el dominio configurado y tiraría abajo el certificado de la raíz.
+
+Registros A de la raíz, para referencia (son los de GitHub Pages, fijos):
 
 ```
 185.199.108.153
@@ -30,17 +32,19 @@ Opcionalmente, los mismos en IPv6 (AAAA):
 2606:50c0:8003::153
 ```
 
-Si el panel de DonDominio no deja poner registros A en la raíz porque ya hay un
-ANAME, vale con cambiar ese ANAME a `castillostudio.github.io`.
+## Pendiente
+
+- Marcar **Enforce HTTPS** en Settings → Pages.
 
 ## Subdominios de proyectos
 
 `bitacora.castillostudio.es` es el sitio de descargas de Bitácora
 (repositorio público `CastilloStudio/bitacora-descargas`, servido por GitHub Pages).
 
-**Está roto**: el CNAME apunta a `emiliocastilo.github.io`, pero el repositorio se
-transfirió a la organización, así que ahora lo sirve `castillostudio.github.io`. De
-ahí el 503.
+**Funciona, pero de prestado**: el CNAME sigue apuntando a `emiliocastilo.github.io`
+y responde solo porque GitHub mantiene la redirección de la cuenta personal desde que
+se transfirió `bitacora-descargas` a la organización. Esa redirección no es un
+contrato: conviene apuntarlo bien.
 
 | Nombre | Tipo | Ahora | Ponlo en |
 |---|---|---|---|
@@ -61,14 +65,14 @@ cambiar el dominio propio en los ajustes de Pages de `bitacora-descargas`.
 
 Ningún registro de correo interfiere con GitHub Pages: Pages solo mira la raíz y `www`.
 
-## Después de cambiar el DNS
+## Si algún día se cambia el dominio
 
-1. Esperar a que propague (`dig +short www.castillostudio.es` debe devolver las IP
-   de GitHub, no `31.214.178.55`).
-2. En **Settings → Pages** del repositorio, comprobar que el dominio propio sigue
-   siendo `www.castillostudio.es` y que aparece el check verde de verificación.
-3. Marcar **Enforce HTTPS** en cuanto GitHub emita el certificado (tarda entre unos
-   minutos y una hora desde que el DNS es correcto).
+Hay que tocarlo en tres sitios a la vez, o se pelean entre ellos:
+
+1. `public/CNAME` — es quien fija el dominio propio en cada despliegue.
+2. `SITE_URL` en `.github/workflows/deploy.yml` — de ahí salen el canonical, las
+   etiquetas Open Graph y el sitemap.
+3. Los registros DNS en DonDominio.
 
 ## Correo
 
