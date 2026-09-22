@@ -1,0 +1,23 @@
+CLAUDE.md
+  s_09f741c306164a::t_cfd94a0ef294a6 103-105
+docs/landing.md
+  s_09f741c306164a::t_977420f3087547 73-74
+docs/legal.md
+  s_09f741c306164a::t_33ff1bd2e2cf65 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e9ca6196004c8ad94735955f6e99a4da44f19244",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
