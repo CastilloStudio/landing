@@ -56,7 +56,7 @@ Si cambia el dominio, hay que tocar los tres o se pelean:
    abajo el certificado. Ya pasó una vez.
 2. `SITE_URL` en `.github/workflows/deploy.yml` — de ahí salen el canonical, el
    Open Graph y el sitemap.
-3. Los registros DNS en DonDominio (ver `docs/dominio.md`).
+3. Los registros DNS en DonDominio (documentados en `CastilloStudio/interno`).
 
 ## Estructura
 
@@ -74,8 +74,6 @@ src/
 brand/                       GENERADO
 scripts/build-brand.mjs      el generador
 docs/marca.md                guía de marca
-docs/landing.md              plan de contenido y decisiones pendientes
-docs/dominio.md              DNS y correo
 ```
 
 Añadir un caso de éxito es crear un `.md` en `src/content/casos/` con el
@@ -90,21 +88,19 @@ producto, instalador y soporte— y hay prueba de ello en la propia organizació
 
 - **AquaCore** (`CastilloStudio/aquacore`, privado) — ecosistema IoT, ESP32 +
   MQTT/TLS + PostgreSQL + Next.js, hardware en KiCad. Vivo en aquacorelabs.es.
-- **Bitácora** (`CastilloStudio/bitacora`, privado) — app .NET de escritorio para
-  una consulta de psicología. Descargas en bitacora.castillostudio.es
-  (repo `CastilloStudio/bitacora-descargas`, público).
+- **Bitácora** (`CastilloStudio/bitacora`, privado) — producto propio: aplicación
+  .NET de escritorio para consultas de psicología, que se distribuye en
+  bitacora.castillostudio.es (repo `CastilloStudio/bitacora-descargas`, público).
 
 Al escribir copy, la prueba de trabajo entregado manda sobre el discurso de
 agencia.
 
-## Pendientes conocidos
+## Este repositorio es público
 
-Están en `docs/landing.md` y `docs/dominio.md`. Los que más pesan:
+Antes de escribir algo aquí —código, comentario, documento o mensaje de
+commit—, la pregunta es si molestaría verlo citado por un tercero. La
+planificación, el estado legal y el inventario de infraestructura viven en
+`CastilloStudio/interno`, que es privado. Los pendientes del proyecto, también.
 
-- No hay aviso legal ni política de privacidad. **No es un descuido**: la
-  LSSI obliga cuando hay actividad económica, y la empresa no existe todavía.
-  Los textos están redactados y esperando en `docs/legal.md`.
-- El contacto es un `mailto:` a un Gmail personal. No hay buzón en el dominio.
-- Falta confirmar con los clientes qué se puede contar de cada caso.
-- La sección "quiénes somos" es un borrador: falta el perfil de Alejandro y las
-  fotos de los dos. No inventes trayectorias que no estén respaldadas.
+Lo único que conviene recordar aquí: la sección "quiénes somos" es un borrador,
+faltan las fotos, y **no se inventan trayectorias que no estén respaldadas**.
