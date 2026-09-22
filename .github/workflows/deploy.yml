@@ -24,9 +24,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: withastro/action@v5
         env:
-          # Cuando haya dominio propio: SITE_URL=https://castillostudio.es y BASE_PATH=/
-          SITE_URL: https://castillostudio.github.io
-          BASE_PATH: /landing
+          SITE_URL: https://www.castillostudio.es
+          BASE_PATH: /
 
   deploy:
     needs: build
