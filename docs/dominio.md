@@ -72,7 +72,23 @@ Ningún registro de correo interfiere con GitHub Pages: Pages solo mira la raíz
 
 ## Correo
 
-Todavía no hay buzón. La web anuncia `hola@castillostudio.es` en
-[`src/config.ts`](../src/config.ts): **hay que crear ese buzón o cambiar la dirección
-antes de publicar**, o el formulario de contacto de la landing apunta a un correo que
-no existe.
+De momento la web publica una dirección de Gmail personal, definida en
+[`src/config.ts`](../src/config.ts). Funciona desde el primer día y no cuesta nada,
+pero conviene sustituirla por una del dominio en cuanto haya buzón.
+
+Opciones estudiadas para `hola@castillostudio.es`, todas de coste cero o casi:
+
+- **Cloudflare Email Routing + relay SMTP** — reenvío gratis e ilimitado a la bandeja
+  de siempre; para *enviar* como `hola@` hace falta además un servidor SMTP en el
+  "Enviar como" de Gmail (Brevo, 300/día, o SMTP2GO, 1.000/mes). Exige mover los
+  nameservers a Cloudflare.
+- **Zoho Mail (plan gratuito)** — buzón real para 5 usuarios y 5 GB sin mover el DNS,
+  pero sin IMAP ni POP: solo webmail y app.
+- **Buzón de pago** — alrededor de 1 €/mes en Mailbox.org, Migadu o el propio
+  DonDominio, con IMAP y sin montaje.
+
+DonDominio **no** incluye redirecciones de correo en el plan gratuito de Redirección
+y Parking, así que la opción de reenviar desde el mismo panel del dominio no existe.
+
+Cuando se elija proveedor hay que sustituir el `TXT v=spf1 include:spf.dondominio.com`
+por el SPF de ese proveedor, o el correo saliente acabará en spam.
