@@ -1,0 +1,41 @@
+name: Enlaces
+
+# En cada PR, y una vez por semana para cazar enlaces que se pudren solos:
+# así se detecta un caso de éxito que deja de responder sin que nadie lo mire.
+on:
+  pull_request:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      - name: Comprobar enlaces de la web y de la documentación
+        # --root-dir resuelve los enlaces que empiezan por "/". El propio
+        # dominio se excluye: las páginas nuevas aún no están publicadas y sus
+        # canonical darían 404 hasta que se mezcle el PR.
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 3
+            --timeout 20
+            --accept 200,206,999
+            --root-dir "$GITHUB_WORKSPACE/dist"
+            --exclude '^https?://(localhost|127\.0\.0\.1)'
+            --exclude '^https://castillostudio\.es'
+            --exclude '^https://github\.com/CastilloStudio/(aquacore|bitacora|demo-repository)'
+            dist/**/*.html
+            ./*.md
+            docs/*.md
+          fail: true

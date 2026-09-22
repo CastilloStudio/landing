@@ -70,15 +70,19 @@ actualización automática.
 
 ## Decisiones pendientes
 
-- **Stack** de la landing (ver más abajo).
-- **Dominio**: castillostudio.es / .com / .dev — comprobar disponibilidad.
-- **Hosting**: estático en Cloudflare Pages / Vercel, o el VPS que ya se usa para
-  AquaCore.
-- **Formulario**: servicio externo (Formspree, Resend) o endpoint propio.
-- **Idioma**: español primero; dejar la estructura preparada por si hace falta inglés.
-- **Analítica**: algo sin cookies (Plausible, Umami) para evitar el banner.
+- **Aviso legal y privacidad**: no aplican todavía porque no hay actividad
+  económica. Los textos están preparados; ver `docs/legal.md`.
+- **Foto** para la sección "quién está detrás", y revisar ese texto, que es un
+  borrador escrito desde fuera.
+- **Analítica**: Cloudflare Web Analytics, gratis y sin cookies. Hace falta crear el
+  sitio en el panel de Cloudflare y meter el token.
+- **Formulario** en lugar del `mailto:`: Formspree o Web3Forms tienen plan gratuito.
+  Si se añade, hay que ampliar la política de privacidad.
+- **Correo del dominio** (ver `docs/dominio.md`).
+- **Permiso de los clientes** para contar cada caso.
+- **Idioma**: español primero; la estructura admite inglés si hace falta.
 
-## Stack propuesto
+## Stack elegido
 
 **Astro + Tailwind**, contenido en Markdown/MDX y despliegue estático.
 
