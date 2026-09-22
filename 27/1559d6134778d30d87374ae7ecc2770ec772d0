@@ -1,0 +1,21 @@
+docs/dominio.md
+  s_09f741c306164a::t_6483c94a54bc7f 75-94
+src/config.ts
+  s_09f741c306164a::t_1165398082093f 3-5,11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "271559d6134778d30d87374ae7ecc2770ec772d0",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
