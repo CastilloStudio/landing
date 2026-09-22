@@ -28,7 +28,6 @@ jobs:
             --max-retries 3
             --timeout 20
             --accept 200,206,999
-            --exclude-mail
             --exclude '^https?://(localhost|127\.0\.0\.1)'
             --exclude '^https://github\.com/CastilloStudio/(aquacore|bitacora|demo-repository)'
             dist/**/*.html
