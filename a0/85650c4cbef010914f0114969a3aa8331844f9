@@ -1,0 +1,19 @@
+.github/workflows/enlaces.yml
+  s_09f741c306164a::t_549a1ed6795b66 32-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a085650c4cbef010914f0114969a3aa8331844f9",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
