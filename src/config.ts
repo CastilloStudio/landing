@@ -1,12 +1,14 @@
 /**
  * Datos del sitio en un único punto.
- * PENDIENTE: confirmar dominio y buzón antes de publicar (ver docs/landing.md).
+ * El correo es provisional: cuando exista un buzón en el dominio propio, se
+ * cambia aquí y se propaga a la cabecera, contacto, pie y datos estructurados
+ * (ver docs/dominio.md).
  */
 export const SITE = {
   nombre: 'Castillo Studio',
   claim: 'Tecnología para un mundo real',
   frase: 'Hacemos que la tecnología funcione para ti',
-  email: 'hola@castillostudio.es',
+  email: 'emiliocastillogonzalez@gmail.com',
   github: 'https://github.com/CastilloStudio',
   nav: [
     { texto: 'Qué hacemos', href: '#que-hacemos' },
