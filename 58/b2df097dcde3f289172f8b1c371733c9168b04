@@ -1,0 +1,125 @@
+.gitignore
+  s_09f741c306164a::t_945863e41176b0 1-20
+README.md
+  s_09f741c306164a::t_8932716d235f6d 1-49
+brand/contact-sheet.svg
+  s_09f741c306164a::t_cb522302137c37 1-853
+brand/favicon/app-icon.svg
+  s_09f741c306164a::t_8323acfe63be80 1-5
+brand/favicon/favicon.svg
+  s_09f741c306164a::t_e04d0e1f854da0 1-4
+brand/svg/castillo-studio-horizontal-blanco.svg
+  s_09f741c306164a::t_2879d9dfd9782f 1-19
+brand/svg/castillo-studio-horizontal-color.svg
+  s_09f741c306164a::t_d66c80bcfa9aad 1-19
+brand/svg/castillo-studio-horizontal-negativo.svg
+  s_09f741c306164a::t_dcf479b552b0e5 1-20
+brand/svg/castillo-studio-horizontal-sobre-blanco.svg
+  s_09f741c306164a::t_422f4e5ab7777c 1-20
+brand/svg/castillo-studio-horizontal-sobre-claro.svg
+  s_09f741c306164a::t_08f1691a1a4201 1-20
+brand/svg/castillo-studio-horizontal-tinta.svg
+  s_09f741c306164a::t_f314921f0c8f37 1-19
+brand/svg/castillo-studio-isotipo-blanco.svg
+  s_09f741c306164a::t_8e71a620fb6b13 1-4
+brand/svg/castillo-studio-isotipo-color.svg
+  s_09f741c306164a::t_8d6c5c435bf9e3 1-4
+brand/svg/castillo-studio-isotipo-negativo.svg
+  s_09f741c306164a::t_f767e4fd26c6d3 1-5
+brand/svg/castillo-studio-isotipo-sobre-blanco.svg
+  s_09f741c306164a::t_12e546262fb061 1-5
+brand/svg/castillo-studio-isotipo-sobre-claro.svg
+  s_09f741c306164a::t_53dbb2ffb6ffab 1-5
+brand/svg/castillo-studio-isotipo-tinta.svg
+  s_09f741c306164a::t_4bccde408340b7 1-4
+brand/svg/castillo-studio-principal-blanco.svg
+  s_09f741c306164a::t_369dd5ac3d1ba3 1-44
+brand/svg/castillo-studio-principal-color.svg
+  s_09f741c306164a::t_4f23bd76b52af4 1-44
+brand/svg/castillo-studio-principal-negativo.svg
+  s_09f741c306164a::t_a114f31515ce82 1-45
+brand/svg/castillo-studio-principal-sin-tagline-blanco.svg
+  s_09f741c306164a::t_f9685d0c2f00d3 1-19
+brand/svg/castillo-studio-principal-sin-tagline-color.svg
+  s_09f741c306164a::t_67077eaa023e31 1-19
+brand/svg/castillo-studio-principal-sin-tagline-negativo.svg
+  s_09f741c306164a::t_be97bd34cf923f 1-20
+brand/svg/castillo-studio-principal-sin-tagline-sobre-blanco.svg
+  s_09f741c306164a::t_f210bcb437d15f 1-20
+brand/svg/castillo-studio-principal-sin-tagline-sobre-claro.svg
+  s_09f741c306164a::t_9588a7e0f170e7 1-20
+brand/svg/castillo-studio-principal-sin-tagline-tinta.svg
+  s_09f741c306164a::t_c6d858b823ec25 1-19
+brand/svg/castillo-studio-principal-sobre-blanco.svg
+  s_09f741c306164a::t_1610e8151ef367 1-45
+brand/svg/castillo-studio-principal-sobre-claro.svg
+  s_09f741c306164a::t_ca8bcd5034c51b 1-45
+brand/svg/castillo-studio-principal-tinta.svg
+  s_09f741c306164a::t_03229c5df2a195 1-44
+brand/svg/castillo-studio-wordmark-blanco.svg
+  s_09f741c306164a::t_ea7324580485b9 1-17
+brand/svg/castillo-studio-wordmark-color.svg
+  s_09f741c306164a::t_c1ce4325813083 1-17
+brand/svg/castillo-studio-wordmark-negativo.svg
+  s_09f741c306164a::t_89a4c955d364c9 1-18
+brand/svg/castillo-studio-wordmark-sobre-blanco.svg
+  s_09f741c306164a::t_6114d56635b5cc 1-18
+brand/svg/castillo-studio-wordmark-sobre-claro.svg
+  s_09f741c306164a::t_6a027ed11f3daa 1-18
+brand/svg/castillo-studio-wordmark-tagline-blanco.svg
+  s_09f741c306164a::t_984d5856141aa4 1-42
+brand/svg/castillo-studio-wordmark-tagline-color.svg
+  s_09f741c306164a::t_63ba7aad3e4ffd 1-42
+brand/svg/castillo-studio-wordmark-tagline-negativo.svg
+  s_09f741c306164a::t_b05b651cc3721f 1-43
+brand/svg/castillo-studio-wordmark-tagline-sobre-blanco.svg
+  s_09f741c306164a::t_7537d2d09000e2 1-43
+brand/svg/castillo-studio-wordmark-tagline-sobre-claro.svg
+  s_09f741c306164a::t_a6253220b45338 1-43
+brand/svg/castillo-studio-wordmark-tagline-tinta.svg
+  s_09f741c306164a::t_5b6d40eec74b7a 1-42
+brand/svg/castillo-studio-wordmark-tinta.svg
+  s_09f741c306164a::t_b5cf54c9fe472e 1-17
+package-lock.json
+  s_09f741c306164a::t_c167d5f985fc16 1-670
+package.json
+  s_09f741c306164a::t_32a33446d33e95 1-15
+scripts/build-brand.mjs
+  s_09f741c306164a::t_497d856848a773 1-562
+docs/landing.md
+  s_09f741c306164a::t_0fa52a5ead9faa 1-91
+docs/marca.md
+  s_09f741c306164a::t_3e2229c75dab9b 1-97
+brand/referencias/pack-original/01_logo_principal.svg
+  s_09f741c306164a::t_09bdf2bd538774 1-9
+brand/referencias/pack-original/02_logo_principal_negativo.svg
+  s_09f741c306164a::t_fd784968bbce78 1-9
+brand/referencias/pack-original/03_isotipo.svg
+  s_09f741c306164a::t_6fde5196197312 1-7
+brand/referencias/pack-original/04_isotipo_negativo.svg
+  s_09f741c306164a::t_04f59bc9177b13 1-7
+brand/referencias/pack-original/05_logo_horizontal.svg
+  s_09f741c306164a::t_62de18e9115e1e 1-9
+brand/referencias/pack-original/06_logo_horizontal_negativo.svg
+  s_09f741c306164a::t_74991c1030f1c9 1-9
+brand/referencias/pack-original/09_GUIA_DE_MARCA.md
+  s_09f741c306164a::t_9e90b7c44bce79 1-50
+brand/referencias/pack-original/09_GUIA_DE_MARCA.txt
+  s_09f741c306164a::t_0828e34ea0e472 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "58b2df097dcde3f289172f8b1c371733c9168b04",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
