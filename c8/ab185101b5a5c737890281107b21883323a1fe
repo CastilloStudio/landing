@@ -1,0 +1,21 @@
+README.md
+  s_09f741c306164a::t_a40a24bc3a057b 55
+docs/dominio.md
+  s_09f741c306164a::t_511b80be8a6df0 1-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c8ab185101b5a5c737890281107b21883323a1fe",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
