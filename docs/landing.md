@@ -70,8 +70,8 @@ actualización automática.
 
 ## Decisiones pendientes
 
-- **Datos fiscales** para el aviso legal: titular, NIF y domicilio. Hasta que estén,
-  CI falla a propósito (ver el guardia de marcadores en `ci.yml`).
+- **Aviso legal y privacidad**: no aplican todavía porque no hay actividad
+  económica. Los textos están preparados; ver `docs/legal.md`.
 - **Foto** para la sección "quién está detrás", y revisar ese texto, que es un
   borrador escrito desde fuera.
 - **Analítica**: Cloudflare Web Analytics, gratis y sin cookies. Hace falta crear el

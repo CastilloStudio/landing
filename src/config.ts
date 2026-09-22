@@ -10,17 +10,6 @@ export const SITE = {
   frase: 'Hacemos que la tecnología funcione para ti',
   email: 'emiliocastillogonzalez@gmail.com',
   github: 'https://github.com/CastilloStudio',
-  /**
-   * Datos del titular para el aviso legal (los exige el art. 10 de la LSSI-CE).
-   * Los «marcadores» los detecta CI y hacen fallar la compilación: la web no
-   * puede publicarse con un aviso legal a medio rellenar.
-   */
-  legal: {
-    titular: '«NOMBRE Y APELLIDOS O RAZÓN SOCIAL»',
-    nif: '«NIF»',
-    domicilio: '«DOMICILIO A EFECTOS DE NOTIFICACIONES»',
-    actividad: 'Desarrollo de software y hardware a medida',
-  },
   // BORRADOR: revisar y personalizar antes de publicar.
   quien: {
     nombre: 'Emilio Castillo',

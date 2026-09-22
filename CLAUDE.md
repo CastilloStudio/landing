@@ -100,7 +100,8 @@ agencia.
 
 Están en `docs/landing.md` y `docs/dominio.md`. Los que más pesan:
 
-- No hay aviso legal ni política de privacidad, y en España son obligatorios
-  para una web de empresa.
+- No hay aviso legal ni política de privacidad. **No es un descuido**: la
+  LSSI obliga cuando hay actividad económica, y la empresa no existe todavía.
+  Los textos están redactados y esperando en `docs/legal.md`.
 - El contacto es un `mailto:` a un Gmail personal. No hay buzón en el dominio.
 - Falta confirmar con los clientes qué se puede contar de cada caso.
