@@ -1,5 +1,4 @@
 ---
-import Logo from './Logo.astro';
 import { SITE } from '../config';
 
 const { quien } = SITE;
@@ -7,29 +6,40 @@ const { quien } = SITE;
 
 <section id="quien" class="scroll-mt-20 bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-6xl px-6">
-    <p class="eyebrow text-blue-ink">Quiénes somos</p>
-    <h2 class="titular mt-5 max-w-3xl text-3xl sm:text-5xl">
-      Un estudio pequeño, a propósito.
-    </h2>
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+      <div>
+        <p class="eyebrow text-blue-ink">Quiénes somos</p>
+        <h2 class="titular mt-5 text-3xl sm:text-5xl">
+          Un estudio pequeño, a propósito.
+        </h2>
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-slate-600">
+          {quien.parrafos.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
 
-    <div class="mt-8 max-w-2xl space-y-6 text-lg leading-relaxed text-slate-600">
-      {quien.parrafos.map((p) => <p>{p}</p>)}
+      <!-- Sin retratos: en vez de un hueco con relleno, las firmas se tratan
+           como tipografía. Cuando haya fotos, aquí van. -->
+      <div class="lg:pt-24">
+        <div class="rounded-2xl bg-navy p-8 text-bone sm:p-10">
+          <p class="eyebrow text-blue-soft">Fundadores</p>
+          <ul class="mt-8 space-y-6">
+            {
+              quien.fundadores.map((nombre) => (
+                <li class="flex items-center gap-4 border-t border-white/15 pt-6 first:border-0 first:pt-0">
+                  <span
+                    class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue"
+                    aria-hidden="true"
+                  />
+                  <span class="font-display text-xl font-light sm:text-2xl">{nombre}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="mt-8 border-t border-white/15 pt-6 text-sm text-grey">
+            {quien.disciplina}
+          </p>
+        </div>
+      </div>
     </div>
-
-    <ul class="mt-16 grid gap-8 sm:grid-cols-2 lg:max-w-3xl">
-      {
-        quien.fundadores.map((persona) => (
-          <li>
-            {/* Sin retratos todavía: el isotipo ocupa el hueco para que las
-                fichas no queden vacías. Sustituir cuando haya fotos. */}
-            <div class="flex aspect-[4/3] items-center justify-center rounded-2xl bg-bone ring-1 ring-grey/60 ring-inset">
-              <Logo name="isotipo-color" class="h-16 w-auto opacity-20" />
-            </div>
-            <p class="mt-5 font-display text-xl">{persona.nombre}</p>
-            <p class="mt-1 text-sm text-slate-500">{persona.rol}</p>
-          </li>
-        ))
-      }
-    </ul>
   </div>
 </section>
