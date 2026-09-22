@@ -1,0 +1,53 @@
+.astro/content-assets.mjs
+  s_09f741c306164a::t_3989e002c3f761 1
+README.md
+  s_09f741c306164a::t_bf88cf1c4f020f 45,75-85
+astro.config.mjs
+  s_09f741c306164a::t_4ecadf13b45234 3,15
+docs/marca.md
+  s_09f741c306164a::t_d7c3a70a13cd10 49-50,56-61
+package-lock.json
+  s_09f741c306164a::t_b7ff56222768b2 11,257-266,2291-2299,2349-2354,4578-4611,4806
+package.json
+  s_09f741c306164a::t_038825f287dbf4 20
+scripts/build-brand.mjs
+  s_09f741c306164a::t_c95713db746a85 511-513
+src/components/Casos.astro
+  s_09f741c306164a::t_5c47841bed07a7 12,29,54
+src/components/Contacto.astro
+  s_09f741c306164a::t_29fac58067385d 9,23,30
+src/components/Footer.astro
+  s_09f741c306164a::t_f1e84788af1abe 19
+src/components/Header.astro
+  s_09f741c306164a::t_7c3ec2c961c0c5 25
+src/components/Hero.astro
+  s_09f741c306164a::t_91a832ffbc4475 37
+src/components/Servicios.astro
+  s_09f741c306164a::t_0f6f07fa2dfe7e 27
+src/pages/404.astro
+  s_09f741c306164a::t_5b2b6f5a847bf0 1-32
+src/pages/manifest.json.ts
+  s_09f741c306164a::t_159b7d1b3a8697 1-25
+src/pages/robots.txt.ts
+  s_09f741c306164a::t_3337995f259ce6 1-16
+src/styles/global.css
+  s_09f741c306164a::t_9ce726c4bfee17 11-13
+src/layouts/Base.astro
+  s_09f741c306164a::t_04859333653034 3,8-9,15,22-56,67-70,75,77,79-80,82,87-91,93,95-98,100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f4e06036817ce11c086b55a32a2e12e792521ab3",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
