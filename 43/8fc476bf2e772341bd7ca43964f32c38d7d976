@@ -1,0 +1,23 @@
+CLAUDE.md
+  s_09f741c306164a::t_6d8677b6fe8414 86-87,109-110
+src/components/Quien.astro
+  s_09f741c306164a::t_a590f5a8d8e647 10-13,15-16,18-33
+src/config.ts
+  s_09f741c306164a::t_4015df2200dffe 13,15-18,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "438fc476bf2e772341bd7ca43964f32c38d7d976",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
