@@ -1,0 +1,21 @@
+src/components/Quien.astro
+  s_09f741c306164a::t_13ae488d61c638 9-18,20-42
+src/config.ts
+  s_09f741c306164a::t_de9aa9912190c1 14-17,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "38e111f50d34cb864afc11f5b9accfcf3ae6031d",
+  "prompts": {},
+  "sessions": {
+    "s_09f741c306164a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dae6e461-0249-49be-9407-fb1fcd1c68de",
+        "model": "unknown"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
