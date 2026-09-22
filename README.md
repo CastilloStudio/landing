@@ -52,6 +52,7 @@ brand/            Pack de marca — GENERADO, no editar a mano
 docs/
   marca.md        Guía de marca: lockups, paleta, tipografía, usos
   landing.md      Plan de la web: secciones, casos de éxito, decisiones pendientes
+  dominio.md      DNS del dominio propio y pasos para activar HTTPS
 scripts/
   build-brand.mjs Generador del pack de marca
 ```
