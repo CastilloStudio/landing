@@ -1,0 +1,21 @@
+src/components/Casos.astro
+  s_7b85538244d8ae::t_88be1ba22f02c1 18-19
+src/content/casos/carmenbarquero.md
+  s_7b85538244d8ae::t_7b92a20d68ea03 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8ad7af960af11fc16349b46f842b2d4ef5b49a01",
+  "prompts": {},
+  "sessions": {
+    "s_7b85538244d8ae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43148c81-9eb0-4b6d-bf70-1215ec90c1d6",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
