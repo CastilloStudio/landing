@@ -1,0 +1,23 @@
+src/components/Contacto.astro
+  s_7b85538244d8ae::t_8490ed9299fd8d 3-4,24-51
+src/components/Footer.astro
+  s_7b85538244d8ae::t_567a2eed9d2de9 17-23
+src/config.ts
+  s_7b85538244d8ae::t_e0db3dda4690a2 11,13-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3ecb98dbca9ec041cc573b3557ec694ee9368118",
+  "prompts": {},
+  "sessions": {
+    "s_7b85538244d8ae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43148c81-9eb0-4b6d-bf70-1215ec90c1d6",
+        "model": "unknown"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
