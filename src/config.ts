@@ -8,7 +8,16 @@ export const SITE = {
   nombre: 'Castillo Studio',
   claim: 'Tecnología para un mundo real',
   frase: 'Hacemos que la tecnología funcione para ti',
+  /** Correo de referencia: datos estructurados y pie de página. */
   email: 'emiliocastillogonzalez@gmail.com',
+  /**
+   * Los dos fundadores atienden lo mismo, así que en contacto se ofrecen los
+   * dos y el botón escribe a ambos. Provisionales igual que el de arriba.
+   */
+  contactos: [
+    { nombre: 'Emilio Castillo', email: 'emiliocastillogonzalez@gmail.com' },
+    { nombre: 'Alejandro Castillo', email: 'ale.castillo.gonzalez@gmail.com' },
+  ],
   github: 'https://github.com/CastilloStudio',
   quien: {
     // Los dos hacen lo mismo, así que la disciplina es compartida y no va por
