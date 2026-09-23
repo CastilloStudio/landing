@@ -1,0 +1,19 @@
+public/google37cf596a386f6881.html
+  s_809293a253a271::t_83589784bdb86c 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6e40521fba5735a6f7e38a869029eaca6504a385",
+  "prompts": {},
+  "sessions": {
+    "s_809293a253a271": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e06a32e8-a3e0-445d-8272-78597697fa91",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
