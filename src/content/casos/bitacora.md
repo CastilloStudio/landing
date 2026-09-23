@@ -24,8 +24,8 @@ hitos:
     pie: Instalación y actualizaciones automáticas
   - dato: Meet
     pie: Agenda sincronizada con Google Calendar
-  - dato: 13 versiones
-    pie: Publicadas con sus notas, y actualización automática
+  - dato: Sin sustos
+    pie: Si el ordenador se rompe, la consulta entera se recupera en el nuevo
 web: https://bitacora.castillostudio.es
 webTexto: Descargar Bitácora
 ---
