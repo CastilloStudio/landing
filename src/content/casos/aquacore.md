@@ -21,10 +21,10 @@ stack:
 hitos:
   - dato: 3 productos
     pie: Lite, Terra y Pro sobre la misma plataforma
-  - dato: OTA
-    pie: Firmware actualizado en remoto, sin tocar el equipo
-  - dato: BLE
-    pie: Puesta en marcha desde el móvil, sin cables
+  - dato: En remoto
+    pie: Los equipos se actualizan solos, sin ir a desmontarlos
+  - dato: Desde el móvil
+    pie: Se pone en marcha con el teléfono, sin cables ni ordenador
 web: https://aquacorelabs.es
 ---
 
