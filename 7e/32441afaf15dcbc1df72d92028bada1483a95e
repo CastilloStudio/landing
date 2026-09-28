@@ -1,0 +1,45 @@
+src/assets/casos/bitacora.svg
+  s_e2d7c4e727c0c6::t_573e50022660ff 1-26
+src/assets/casos/trastienda.svg
+  s_e2d7c4e727c0c6::t_619d320c82cba3 1-7
+src/components/Casos.astro
+  s_cc172cccb57c3d::t_3684d769f2bdbe 3,19-20,29-40
+src/content/casos/aquacore.md
+  s_e2d7c4e727c0c6::t_0615ded96f8d12 4,7-10,12-13,24-26
+src/content/casos/bitacora.md
+  s_cc172cccb57c3d::t_e5295db11fc43a 4,7,9
+src/content/casos/carmenbarquero.md
+  s_cc172cccb57c3d::t_5bfecab55b0383 2,4,20-21
+CLAUDE.md
+  s_e2d7c4e727c0c6::t_4658ebecc0470f 80-86
+src/content.config.ts
+  s_e2d7c4e727c0c6::t_d9d44083fec8b0 6,9-10
+src/content/casos/trastienda.md
+  s_e2d7c4e727c0c6::t_2c2ee1ccf77830 2,4,7-10,13-14,19-21,24-26,28-29
+src/pages/casos/[id].astro
+  s_e2d7c4e727c0c6::t_a5e8ff0530a686 3,37-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e32441afaf15dcbc1df72d92028bada1483a95e",
+  "prompts": {},
+  "sessions": {
+    "s_cc172cccb57c3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c29005fc-7971-4ede-984b-bcaf9e448567",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    },
+    "s_e2d7c4e727c0c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8cd0766e-11ff-4d14-a7f4-10ca5cb5847a",
+        "model": "unknown"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
