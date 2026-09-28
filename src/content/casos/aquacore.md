@@ -1,23 +1,16 @@
 ---
 orden: 1
 nombre: AquaCore
+icono: ../../assets/casos/aquacore.png
 titular: Del sensor al panel, sin intermediarios
 resumen: >-
-  Ecosistema IoT para monitorizar y automatizar acuarios. Controladores propios
-  basados en ESP32 que hablan por MQTT sobre TLS con una plataforma cloud
-  también propia: telemetría en tiempo real, control de calentadores, bombas y
-  enchufes, y actualización de firmware en remoto.
-sector: Producto propio · IoT
+  Aparatos que vigilan y controlan un acuario desde el móvil: la temperatura
+  al momento, el calentador, las bombas y los enchufes. Diseñamos el aparato,
+  lo que lleva dentro y la plataforma a la que se conecta.
+sector: Producto propio · Acuarios
 aprendizaje: >-
-  Tres capas que normalmente reparten tres proveedores distintos —placa,
-  firmware y nube— diseñadas juntas, así que encajan.
-stack:
-  - ESP32
-  - MQTT / TLS
-  - PostgreSQL
-  - Next.js
-  - KiCad
-  - CI/CD
+  El aparato, su programa y la plataforma, que normalmente hacen tres
+  proveedores distintos, diseñados juntos, así que encajan.
 hitos:
   - dato: 3 productos
     pie: Lite, Terra y Pro sobre la misma plataforma
@@ -28,10 +21,9 @@ hitos:
 web: https://aquacorelabs.es
 ---
 
-El hardware se diseña en KiCad y se fabrica a medida; el firmware se publica con
-su propio canal de releases; el panel y la web pública comparten monorepo con el
-control plane. Un cambio de sensor llega a la gráfica del panel sin pasar por
-ninguna integración de terceros.
+Todo sale de la misma mesa: el aparato se diseña y se fabrica a medida, y la
+aplicación donde se ve lo que pasa en el acuario también es nuestra. Una mejora
+en el aparato llega a la pantalla del cliente sin esperar a nadie más.
 
 La consecuencia práctica es el soporte: cuando algo falla, no hay tres empresas
 señalándose entre ellas.

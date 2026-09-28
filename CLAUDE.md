@@ -77,7 +77,13 @@ docs/marca.md                guía de marca
 ```
 
 Añadir un caso de éxito es crear un `.md` en `src/content/casos/` con el
-frontmatter del esquema. No hace falta tocar código.
+frontmatter del esquema, y su icono cuadrado en `src/assets/casos/`. No hace
+falta tocar código.
+
+Los casos se escriben para quien podría encargarnos algo, no para otro
+desarrollador: **nada técnico** (ni nombres de frameworks, ni «firmware», ni
+«despliegue»), y **nada obvio** («probada», «rápida»): lo que cualquiera da por
+hecho, dicho en voz alta, resta confianza en vez de sumarla.
 
 ## Contexto del negocio
 
