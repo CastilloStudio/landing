@@ -91,6 +91,9 @@ producto, instalador y soporte— y hay prueba de ello en la propia organizació
 - **Bitácora** (`CastilloStudio/bitacora`, privado) — producto propio: aplicación
   .NET de escritorio para consultas de psicología, que se distribuye en
   bitacora.castillostudio.es (repo `CastilloStudio/bitacora-descargas`, público).
+- **Trastienda** (`CastilloStudio/trastienda`, privado) — base de comercio
+  electrónico que se copia por cliente: Medusa v2 + Next.js, preparada para
+  vender en España.
 
 Al escribir copy, la prueba de trabajo entregado manda sobre el discurso de
 agencia.
