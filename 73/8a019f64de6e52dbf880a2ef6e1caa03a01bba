@@ -1,0 +1,21 @@
+CLAUDE.md
+  s_cc172cccb57c3d::t_3121836389e341 94-96
+src/content/casos/trastienda.md
+  s_cc172cccb57c3d::t_a7c45a51474f58 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "738a019f64de6e52dbf880a2ef6e1caa03a01bba",
+  "prompts": {},
+  "sessions": {
+    "s_cc172cccb57c3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c29005fc-7971-4ede-984b-bcaf9e448567",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
