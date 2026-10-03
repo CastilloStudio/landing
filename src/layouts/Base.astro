@@ -7,19 +7,34 @@ interface Props {
   description?: string;
   /** Las páginas de servicio (404) no deben indexarse. */
   noindex?: boolean;
+  /** Imagen de la tarjeta del enlace, de 1200x630. Sin ella, la del estudio. */
+  imagen?: { src: string; alt: string };
+  /** «article» en lo que se lee (casos, manuales); «website» en la portada. */
+  tipo?: 'website' | 'article';
+  /** Nodos de datos estructurados propios de la página, además de los del sitio. */
+  datos?: Record<string, unknown>[];
 }
+
+// La del estudio. Es también la de la portada, y la de sus datos
+// estructurados en todas las páginas: cada página describe lo suyo, no al estudio.
+const DESCRIPCION_ESTUDIO =
+  'Estudio de desarrollo de software y hardware. Diseñamos, construimos y mantenemos productos completos: del sensor al panel, del código al instalador.';
 
 const {
   title = 'Castillo Studio — Tecnología para un mundo real',
-  description = 'Estudio de desarrollo de software y hardware. Diseñamos, construimos y mantenemos productos completos: del sensor al panel, del código al instalador.',
+  description = DESCRIPCION_ESTUDIO,
   noindex = false,
+  imagen,
+  tipo = 'website',
+  datos = [],
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 // Los assets de public/ cuelgan de BASE_URL, que no siempre es la raíz.
 const asset = (ruta: string) => `${import.meta.env.BASE_URL}/${ruta}`.replace(/\/{2,}/g, '/');
-const og = new URL(asset('og-image.png'), Astro.site);
-const alt = `${SITE.nombre} — ${SITE.claim}`;
+const og = new URL(imagen?.src ?? asset('og-image.png'), Astro.site);
+const alt = imagen?.alt ?? `${SITE.nombre} — ${SITE.claim}`;
+const ogTipo = /\.jpe?g$/i.test(og.pathname) ? 'image/jpeg' : 'image/png';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -32,9 +47,10 @@ const jsonLd = {
       logo: new URL(asset('icon-512.png'), Astro.site).toString(),
       image: og.toString(),
       slogan: SITE.claim,
-      description,
+      description: DESCRIPCION_ESTUDIO,
       email: SITE.email,
       sameAs: [SITE.github],
+      founder: SITE.quien.fundadores.map((nombre) => ({ '@type': 'Person', name: nombre })),
       areaServed: { '@type': 'Country', name: 'España' },
       knowsAbout: [
         'Desarrollo de software a medida',
@@ -52,6 +68,7 @@ const jsonLd = {
       inLanguage: 'es-ES',
       publisher: { '@id': `${Astro.site}#organizacion` },
     },
+    ...datos,
   ],
 };
 ---
@@ -78,14 +95,14 @@ const jsonLd = {
 
     {/* WhatsApp y Telegram solo pintan la tarjeta grande si la imagen lleva
         URL absoluta y dimensiones declaradas. */}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={tipo} />
     <meta property="og:site_name" content={SITE.nombre} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={og} />
     <meta property="og:image:secure_url" content={og} />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content={ogTipo} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={alt} />
@@ -98,6 +115,7 @@ const jsonLd = {
     <meta name="twitter:image:alt" content={alt} />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <slot name="head" />
   </head>
   <body>
     <a

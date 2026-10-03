@@ -7,6 +7,8 @@ resumen: >-
   Aparatos que vigilan y controlan un acuario desde el móvil: la temperatura
   al momento, el calentador, las bombas y los enchufes. Diseñamos el aparato,
   lo que lleva dentro y la plataforma a la que se conecta.
+descripcion: >-
+  Aparatos que vigilan y controlan un acuario desde el móvil. Diseñamos el aparato, lo que lleva dentro y la plataforma a la que se conecta.
 sector: Producto propio · Acuarios
 aprendizaje: >-
   El aparato, su programa y la plataforma, que normalmente hacen tres

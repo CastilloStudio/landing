@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Logo from '../../components/Logo.astro';
 import Footer from '../../components/Footer.astro';
@@ -14,11 +14,54 @@ export async function getStaticPaths() {
 const { caso } = Astro.props;
 const { Content } = await render(caso);
 const inicio = import.meta.env.BASE_URL;
+const ruta = (r: string) => `${inicio}/${r}`.replace(/\/{2,}/g, '/');
+
+const titulo = `${caso.data.nombre} — ${caso.data.titular} | ${SITE.nombre}`;
+const descripcion = caso.data.descripcion ?? caso.data.resumen;
+const url = new URL(Astro.url.pathname, Astro.site).toString();
+
+// La tarjeta del enlace, recortada a 1200x630 al compilar.
+const compartir = caso.data.compartir
+  ? await getImage({ src: caso.data.compartir, width: 1200, height: 630, fit: 'cover', format: 'jpg' })
+  : undefined;
+
+const datos = [
+  {
+    '@type': 'WebPage',
+    '@id': `${url}#pagina`,
+    url,
+    name: titulo,
+    description: descripcion,
+    inLanguage: 'es-ES',
+    isPartOf: { '@id': `${Astro.site}#sitio` },
+    publisher: { '@id': `${Astro.site}#organizacion` },
+    breadcrumb: { '@id': `${url}#miga` },
+    about: {
+      '@type': 'CreativeWork',
+      name: caso.data.nombre,
+      description: caso.data.resumen,
+      creator: { '@id': `${Astro.site}#organizacion` },
+      ...(caso.data.web ? { url: caso.data.web } : {}),
+    },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#miga`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: SITE.nombre, item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Casos', item: new URL('#casos', Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: caso.data.nombre, item: url },
+    ],
+  },
+];
 ---
 
 <Base
-  title={`${caso.data.nombre} — ${caso.data.titular} | ${SITE.nombre}`}
-  description={caso.data.resumen}
+  title={titulo}
+  description={descripcion}
+  tipo="article"
+  imagen={compartir && { src: compartir.src, alt: `${caso.data.nombre}: ${caso.data.titular}` }}
+  datos={datos}
 >
   <header class="bg-navy">
     <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-6">
@@ -69,6 +112,71 @@ const inicio = import.meta.env.BASE_URL;
         >
           <Content />
         </div>
+
+        {
+          caso.data.funciones && (
+            <section class="mt-16" aria-labelledby="funciones">
+              <h2 id="funciones" class="titular text-2xl sm:text-3xl">
+                Lo que trae
+              </h2>
+              <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+                {caso.data.funciones.map((f) => (
+                  <li class="rounded-2xl border border-grey/60 bg-white p-6">
+                    <h3 class="font-display font-medium text-navy">{f.titulo}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.texto}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          caso.data.capturas && (
+            <section class="mt-16" aria-labelledby="capturas">
+              <h2 id="capturas" class="titular text-2xl sm:text-3xl">
+                Así se ve
+              </h2>
+              <div class="mt-8 space-y-12">
+                {caso.data.capturas.map((c, i) => (
+                  <figure class={c.movil ? 'mx-auto max-w-xs' : ''}>
+                    <Image
+                      src={c.imagen}
+                      alt={c.alt}
+                      widths={c.movil ? [320, 640] : [480, 896, 1600]}
+                      sizes={c.movil ? '320px' : '(min-width: 56rem) 52rem, 100vw'}
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      class={`w-full border border-grey/60 bg-white shadow-sm ${c.movil ? 'rounded-3xl' : 'rounded-xl'}`}
+                    />
+                    <figcaption class="mt-3 text-center text-sm text-slate-600">
+                      {c.pie}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          caso.data.manual && (
+            <div class="mt-16 flex flex-col gap-6 rounded-2xl bg-navy p-8 text-bone sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="eyebrow text-blue-soft">Manual</p>
+                <p class="mt-3 max-w-md leading-relaxed text-grey">
+                  Lo que hace cada botón del panel, en el orden en que se usa.
+                  Público: se puede leer antes de decidir.
+                </p>
+              </div>
+              <a
+                href={ruta(caso.data.manual.href)}
+                class="shrink-0 rounded-full bg-bone px-7 py-3.5 text-center font-medium text-navy transition-colors hover:bg-white"
+              >
+                {caso.data.manual.texto}
+              </a>
+            </div>
+          )
+        }
 
         <div class="mt-12 rounded-2xl border border-grey/60 bg-bone p-8">
           <p class="eyebrow text-slate-500">Qué demuestra</p>

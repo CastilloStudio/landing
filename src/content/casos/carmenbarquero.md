@@ -8,6 +8,8 @@ resumen: >-
   la reserva de cita y los consentimientos que la consulta necesita firmados.
   El paciente los rellena y los firma en la propia web, y se descarga el
   documento ya terminado.
+descripcion: >-
+  Web a medida de una consulta de psicología en Mérida: servicios, cita y consentimientos que el paciente firma en la propia web.
 sector: Encargo · Salud
 aprendizaje: >-
   Una plantilla habría dado una web parecida a la de cualquier otra consulta. A

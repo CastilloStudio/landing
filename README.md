@@ -75,7 +75,8 @@ todo el pack de una vez.
 
 La página sale con 100 en accesibilidad, buenas prácticas y SEO en Lighthouse. Lleva
 canonical, `robots`, sitemap (`@astrojs/sitemap`), `robots.txt`, manifiesto web,
-datos estructurados (`ProfessionalService` + `WebSite`) y las etiquetas Open Graph y
+datos estructurados (`ProfessionalService` + `WebSite`, y en cada caso y en el
+manual su página y su miga de pan), `llms.txt` para asistentes y las etiquetas Open Graph y
 Twitter completas, con la imagen de 1200x630 y sus dimensiones declaradas para que
 WhatsApp y Telegram pinten la tarjeta grande.
 
