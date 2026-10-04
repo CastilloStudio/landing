@@ -124,6 +124,12 @@ const datos = [
             ))
           }
         </ul>
+        {/* Aquí y no en el script del final: aquel corre después de pintar, y
+            recoger el índice entonces mueve la página. */}
+        <script is:inline>
+          document.currentScript.previousElementSibling.classList.add('indice-plegable');
+          document.querySelector('.indice-seccion')?.classList.add('abierta');
+        </script>
       </nav>
     </aside>
 
@@ -295,7 +301,6 @@ const datos = [
     .map((a) => document.getElementById(a.dataset.ancla!))
     .filter((el): el is HTMLElement => !!el);
   const secciones = [...document.querySelectorAll<HTMLElement>('.indice-seccion')];
-  document.querySelector('.indice-lista')?.classList.add('indice-plegable');
 
   let actual: string | undefined;
   const marcar = () => {

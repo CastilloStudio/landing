@@ -1,6 +1,11 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../config';
+// Las dos tipografías de la marca, pedidas desde el principio: si llegan tarde,
+// el texto se recoloca al cambiar de letra y la página «salta» (Lighthouse,
+// desplazamiento de diseño). Son las mismas que importa global.css.
+import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2?url';
+import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 interface Props {
   title?: string;
@@ -80,6 +85,8 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preload" href={montserrat} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     <meta
       name="robots"
