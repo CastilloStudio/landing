@@ -1,0 +1,349 @@
+---
+/**
+ * El manual del panel de Trastienda. El texto no se escribe aquí: viene del
+ * repositorio de Trastienda (npm run manual:trastienda) y se pinta tal cual.
+ *
+ * El índice se construye al compilar con los títulos del manual, así que está
+ * en el HTML: se ve sin JavaScript y lo leen buscadores y asistentes. El script
+ * del final solo marca por dónde va quien lee y despliega ese apartado.
+ */
+import { getEntry, render } from 'astro:content';
+import { getImage } from 'astro:assets';
+import imagenCompartir from '../../../assets/casos/trastienda/compartir.jpg';
+import Base from '../../../layouts/Base.astro';
+import Logo from '../../../components/Logo.astro';
+import Footer from '../../../components/Footer.astro';
+import { SITE } from '../../../config';
+
+const manual = await getEntry('manuales', 'trastienda/manual');
+if (!manual) throw new Error('Falta el manual: npm run manual:trastienda');
+const { Content, headings } = await render(manual);
+
+const inicio = import.meta.env.BASE_URL;
+const caso = `${inicio}/casos/trastienda/`.replace(/\/{2,}/g, '/');
+
+// Cada h3 bajo el h2 que lo precede. La última sección, «Avanzado», va aparte.
+type Seccion = { slug: string; text: string; hijos: { slug: string; text: string }[] };
+const secciones: Seccion[] = [];
+for (const h of headings) {
+  if (h.depth === 2) secciones.push({ slug: h.slug, text: h.text, hijos: [] });
+  else if (h.depth === 3 && secciones.length) secciones.at(-1)!.hijos.push(h);
+}
+
+const titulo = `Manual del panel de Trastienda | ${SITE.nombre}`;
+const descripcion =
+  'Cómo se lleva una tienda Trastienda: preparar y enviar pedidos, devoluciones, productos e IVA, stock, cupones, rebajas, ventas y opiniones.';
+const url = new URL(Astro.url.pathname, Astro.site).toString();
+const compartir = await getImage({ src: imagenCompartir, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+const urlCaso = new URL(caso, Astro.site).toString();
+
+const datos = [
+  {
+    '@type': 'TechArticle',
+    '@id': `${url}#manual`,
+    url,
+    headline: 'Trastienda · manual del panel',
+    description: descripcion,
+    inLanguage: 'es-ES',
+    isPartOf: { '@id': `${Astro.site}#sitio` },
+    author: { '@id': `${Astro.site}#organizacion` },
+    publisher: { '@id': `${Astro.site}#organizacion` },
+    about: { '@type': 'CreativeWork', name: 'Trastienda', url: urlCaso },
+    audience: { '@type': 'Audience', audienceType: 'Dueños de tiendas online' },
+    breadcrumb: { '@id': `${url}#miga` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#miga`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: SITE.nombre, item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Trastienda', item: urlCaso },
+      { '@type': 'ListItem', position: 3, name: 'Manual del panel', item: url },
+    ],
+  },
+];
+---
+
+<Base
+  title={titulo}
+  description={descripcion}
+  tipo="article"
+  imagen={{ src: compartir.src, alt: 'Trastienda: manual del panel' }}
+  datos={datos}
+>
+  <link
+    slot="head"
+    rel="alternate"
+    type="text/markdown"
+    href={`${caso}manual.md`}
+    title="El manual en Markdown"
+  />
+  <header class="bg-navy">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+      <a href={inicio} aria-label={SITE.nombre}>
+        <Logo name="horizontal-blanco" acento class="h-9 w-auto" />
+      </a>
+      <a href={caso} class="text-sm text-grey transition-colors hover:text-bone">
+        ← Trastienda
+      </a>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-12">
+    <aside class="indice lg:sticky lg:top-0 lg:max-h-screen lg:overflow-y-auto lg:py-12">
+      <details class="indice-movil lg:hidden" id="indice-movil">
+        <summary>Índice</summary>
+        <nav aria-label="Índice del manual" class="mt-3">
+          <ul>
+            {secciones.map((s) => (
+              <li><a href={`#${s.slug}`}>{s.text}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </details>
+
+      <nav aria-label="Índice del manual" class="hidden lg:block">
+        <p class="eyebrow mb-4 text-slate-500">Índice</p>
+        <ul class="indice-lista">
+          {
+            secciones.map((s, i) => (
+              <li class:list={['indice-seccion', { 'es-avanzado': i === secciones.length - 1 && /avanzado/i.test(s.text) }]} data-seccion={s.slug}>
+                <a href={`#${s.slug}`} data-ancla={s.slug}>{s.text}</a>
+                {s.hijos.length > 0 && (
+                  <ul class="indice-hijos">
+                    {s.hijos.map((h) => (
+                      <li>
+                        <a href={`#${h.slug}`} data-ancla={h.slug} data-padre={s.slug}>
+                          {h.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+        {/* Aquí y no en el script del final: aquel corre después de pintar, y
+            recoger el índice entonces mueve la página. */}
+        <script is:inline>
+          document.currentScript.previousElementSibling.classList.add('indice-plegable');
+          document.querySelector('.indice-seccion')?.classList.add('abierta');
+        </script>
+      </nav>
+    </aside>
+
+    <main id="contenido" class="manual min-w-0 py-12">
+      <Content />
+      <p class="mt-16 border-t border-grey/60 pt-8 text-sm text-slate-500">
+        ¿Quieres una tienda así? <a href={`${inicio}#contacto`}>Cuéntanos qué vendes</a>.
+      </p>
+    </main>
+  </div>
+
+  <Footer />
+</Base>
+
+<style is:global>
+  .manual {
+    color: var(--color-slate-700);
+    line-height: 1.7;
+  }
+  .manual > h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    color: var(--color-navy);
+    text-wrap: balance;
+  }
+  .manual h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: var(--color-navy);
+    margin-top: 3.5rem;
+    scroll-margin-top: 1.5rem;
+  }
+  .manual h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-top: 2.25rem;
+    scroll-margin-top: 1.5rem;
+  }
+  .manual p,
+  .manual ul,
+  .manual ol,
+  .manual table {
+    margin-top: 1rem;
+  }
+  .manual ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+  }
+  .manual ol {
+    list-style: decimal;
+    padding-left: 1.4rem;
+  }
+  .manual li + li {
+    margin-top: 0.35rem;
+  }
+  .manual strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+  .manual a {
+    color: var(--color-blue-ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .manual code {
+    font-size: 0.9em;
+    background: white;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.3rem;
+    padding: 0.05rem 0.3rem;
+  }
+  .manual hr {
+    display: none;
+  }
+  .manual img {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.75rem;
+    background: white;
+    cursor: zoom-in;
+  }
+  /* Las tablas, con su propio desplazamiento: en el móvil no caben. */
+  .manual table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .manual th,
+  .manual td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.6rem 0.9rem 0.6rem 0;
+    border-bottom: 1px solid var(--color-grey);
+  }
+  .manual th {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+  /* «Avanzado» va al final, separado: no estorba, pero se encuentra. */
+  .manual h2:last-of-type {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-grey);
+  }
+
+  .indice a {
+    color: var(--color-slate-600);
+    text-decoration: none;
+  }
+  .indice a:hover,
+  .indice a.activo {
+    color: var(--color-blue-ink);
+  }
+  .indice a.activo {
+    font-weight: 600;
+  }
+  .indice-movil {
+    margin-top: 1.5rem;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.75rem;
+    background: white;
+    padding: 0.75rem 1rem;
+  }
+  .indice-movil summary {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .indice-movil a {
+    display: block;
+    padding: 0.35rem 0;
+  }
+  .indice-lista {
+    font-size: 0.875rem;
+  }
+  .indice-seccion a {
+    display: block;
+    padding: 0.3rem 0;
+  }
+  .indice-hijos {
+    margin-left: 0.9rem;
+    border-left: 1px solid var(--color-grey);
+    padding-left: 0.8rem;
+  }
+  /* Con el script, solo se ven los apartados de la sección que se lee. Sin él,
+     el índice sale entero. */
+  .indice-plegable .indice-seccion:not(.abierta) .indice-hijos {
+    display: none;
+  }
+  .es-avanzado {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-grey);
+  }
+</style>
+
+<script>
+  // Qué apartado se está leyendo: se marca en el índice y se enseñan los
+  // apartados de su sección.
+  const anclas = [...document.querySelectorAll<HTMLAnchorElement>('[data-ancla]')];
+  const destinos = anclas
+    .map((a) => document.getElementById(a.dataset.ancla!))
+    .filter((el): el is HTMLElement => !!el);
+  const secciones = [...document.querySelectorAll<HTMLElement>('.indice-seccion')];
+
+  let actual: string | undefined;
+  const marcar = () => {
+    const raya = window.scrollY + 140;
+    const fondo = window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
+    let elegido = destinos[0];
+    for (const el of destinos) {
+      if (el.offsetTop <= raya) elegido = el;
+      else break;
+    }
+    if (fondo) elegido = destinos.at(-1)!;
+    if (!elegido || elegido.id === actual) return;
+    actual = elegido.id;
+
+    const enlace = anclas.find((a) => a.dataset.ancla === actual);
+    anclas.forEach((a) => a.classList.toggle('activo', a === enlace));
+    const seccion = enlace?.dataset.padre ?? enlace?.dataset.ancla;
+    secciones.forEach((li) => li.classList.toggle('abierta', li.dataset.seccion === seccion));
+  };
+
+  let pendiente = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(() => {
+        pendiente = false;
+        marcar();
+      });
+    },
+    { passive: true },
+  );
+  marcar();
+
+  // En el móvil, el índice se pliega al elegir un apartado.
+  const movil = document.getElementById('indice-movil') as HTMLDetailsElement | null;
+  movil?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) movil.open = false;
+  });
+
+  // Las capturas se abren a tamaño completo.
+  for (const img of document.querySelectorAll<HTMLImageElement>('.manual img')) {
+    img.addEventListener('click', () => window.open(img.currentSrc || img.src, '_blank'));
+  }
+</script>

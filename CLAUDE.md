@@ -64,8 +64,12 @@ Si cambia el dominio, hay que tocar los tres o se pelean:
 src/
   pages/index.astro          la única página
   pages/404.astro
+  pages/casos/[id].astro     una página por caso
+  pages/casos/trastienda/manual.astro   el manual del panel de Trastienda
   pages/robots.txt.ts        endpoints: se generan para seguir al dominio
   pages/manifest.json.ts
+  pages/llms.txt.ts          resumen para asistentes, de los mismos datos
+  content/manuales/          COPIADO: npm run manual:trastienda
   components/                una sección por componente
   content/casos/*.md         los casos, con esquema tipado en content.config.ts
   layouts/Base.astro         SEO, Open Graph, datos estructurados
@@ -78,12 +82,29 @@ docs/marca.md                guía de marca
 
 Añadir un caso de éxito es crear un `.md` en `src/content/casos/` con el
 frontmatter del esquema, y su icono cuadrado en `src/assets/casos/`. No hace
-falta tocar código.
+falta tocar código. Un caso que se enseña a fondo (Trastienda) añade
+`funciones`, `capturas` (en `src/assets/casos/<caso>/`), `manual` y `compartir`
+(la imagen de la tarjeta del enlace), todos opcionales. Si el resumen pasa de
+160 caracteres, `descripcion` es lo que ven buscadores y tarjetas.
 
 Los casos se escriben para quien podría encargarnos algo, no para otro
 desarrollador: **nada técnico** (ni nombres de frameworks, ni «firmware», ni
 «despliegue»), y **nada obvio** («probada», «rápida»): lo que cualquiera da por
 hecho, dicho en voz alta, resta confianza en vez de sumarla.
+
+### El manual de Trastienda no se escribe aquí
+
+Vive en el repositorio de Trastienda (`docs/manual/`), al lado del código que
+describe, y se trae con `npm run manual:trastienda` (desde `../trastienda`).
+Lo que se edite en `src/content/manuales/` lo pisa la siguiente copia. Se
+publica en `/casos/trastienda/manual/` y, en texto, en
+`/casos/trastienda/manual.md`.
+
+### Asistentes
+
+`robots.txt` deja entrar a todos los rastreadores, también los de asistentes,
+a propósito. `llms.txt` se genera con los casos y el manual: si cambia un caso,
+cambia solo.
 
 ## Contexto del negocio
 

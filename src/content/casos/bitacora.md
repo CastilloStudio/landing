@@ -7,6 +7,8 @@ resumen: >-
   Programa para el ordenador que lleva una consulta de psicología entera:
   pacientes, casos individuales y de pareja, agenda con semáforo de cobro,
   historia clínica, informes y facturación. En uso a diario.
+descripcion: >-
+  Programa que lleva una consulta de psicología entera: pacientes, agenda, historia clínica, informes y facturación. En uso a diario.
 sector: Producto propio · Salud
 aprendizaje: >-
   Un producto no está terminado cuando funciona, sino cuando se instala solo,
