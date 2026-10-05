@@ -1,0 +1,21 @@
+package-lock.json
+  s_39a5ff6b16dedd::t_7496aa4827e509 19,22-86,298-338,388-397,637-698,703,714,724,1773,2412,2490-2636,2649-2674,3386-3418,3680-3703,3776-3785,3798-3804,3820-3836,3916-3938,4108-4114,4121-4135,4544-4550,4737-4743,4831-4846,4918-4934,5172-5188,5210-5225,5334-5366,5980-6298,6305-6395
+package.json
+  s_39a5ff6b16dedd::t_10d6e2be51f653 16,19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bbfe6e856de84c85239233bbb86ec9fe74745185",
+  "prompts": {},
+  "sessions": {
+    "s_39a5ff6b16dedd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "92f1b061-dcdb-4f14-a909-1fff390a76fa",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Emilio <emiliocastillogonzalez@gmail.com>"
+    }
+  }
+}
