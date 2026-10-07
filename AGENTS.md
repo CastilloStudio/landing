@@ -22,6 +22,13 @@ npx astro check  # tipos; lo mismo que corre CI
 
 Cada push a `main` despliega. **Emilio mezcla los PR**, no los mezcles tú.
 
+## Issues
+
+Un bug o una mejora que no se resuelva en el cambio en curso se abre como issue
+(`bug` o `enhancement`) y se añade al tablero del estudio con el campo `Proyecto` en
+*Landing*. El PR que lo resuelve lleva `Closes #N`. **Los issues de este repositorio
+son públicos**, como el código: lo que no deba verse fuera no se apunta aquí.
+
 ## Reglas que no son negociables
 
 ### La marca se genera, no se edita
