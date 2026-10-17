@@ -103,3 +103,8 @@ La entrada de Vuelvo se comprobó en escritorio y móvil (320, 390 y 1440 px), c
 build correcto y Lighthouse local 100 en accesibilidad y SEO en portada y detalle.
 El [registro de validación](docs/vuelvo.md#resultado-del-17102026) describe los límites
 y las incidencias previas de herramientas/dependencias registradas por separado.
+
+Publicación de la presentación autorizada por Alejandro el 17/10/2026 mediante
+[PR #16](https://github.com/CastilloStudio/landing/pull/16), conservando el flujo
+`develop` → `main` → GitHub Pages. La autorización afecta a la presentación,
+no al lanzamiento de la aplicación.

@@ -68,3 +68,12 @@ separación en `llms.txt` revisados. Lighthouse móvil: accesibilidad 100 y SEO 
 para portada y Vuelvo; son comprobaciones automáticas locales, no una certificación.
 
 Los avisos previos de dependencias quedan en [#14](https://github.com/CastilloStudio/landing/issues/14).
+
+## Autorización de esta publicación · 17/10/2026
+
+Alejandro autoriza expresamente fusionar y publicar esta entrega en la
+[PR #16](https://github.com/CastilloStudio/landing/pull/16). Esta autorización se
+aplica a la presentación de Vuelvo; el flujo habitual de ramas se conserva.
+La página de destino es https://castillostudio.es/casos/vuelvo/. El resultado de
+la publicación se comprueba en el despliegue de GitHub Pages asociado a la PR.
+Publicar esta página no abre el servicio Vuelvo.
