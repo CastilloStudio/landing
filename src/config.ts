@@ -31,7 +31,7 @@ export const SITE = {
   },
   nav: [
     { texto: 'Qué hacemos', href: '#que-hacemos' },
-    { texto: 'Casos', href: '#casos' },
+    { texto: 'Proyectos', href: '#en-desarrollo' },
     { texto: 'Cómo trabajamos', href: '#proceso' },
     { texto: 'Quiénes somos', href: '#quien' },
     { texto: 'Contacto', href: '#contacto' },

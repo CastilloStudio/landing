@@ -21,9 +21,15 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     '## Casos',
     '',
-    ...casos.map(
+    ...casos.filter((c) => c.data.estado === 'en-uso').map(
       (c) =>
         `- [${c.data.nombre}](${url(`casos/${c.id}/`)}): ${c.data.titular}. ${c.data.resumen.replace(/\s+/g, ' ')}`,
+    ),
+    '',
+    '## Productos en desarrollo',
+    '',
+    ...casos.filter((c) => c.data.estado === 'en-desarrollo').map(
+      (c) => `- [${c.data.nombre}](${url(`casos/${c.id}/`)}): En desarrollo; todavía no disponible para contratar. ${c.data.resumen.replace(/\s+/g, ' ')}`,
     ),
     '',
     '## Trastienda',

@@ -6,9 +6,10 @@ Web pública de Castillo Studio: presentación del estudio y casos de éxito.
 
 ## Estado
 
-Primera versión de la web montada con Astro + Tailwind: hero, qué hacemos, casos de
-éxito, cómo trabajamos y contacto. Pendiente de dominio, buzón de correo y de
-confirmar con los clientes qué se puede contar de cada caso.
+Web publicada en castillostudio.es con presentación, servicios, productos, casos,
+forma de trabajo y contacto. Vuelvo by CastilloStudio tiene una entrada propia en
+«En desarrollo», diferenciada de los casos que ya están en uso. Se presenta el
+proyecto y su demostración, sin anunciar disponibilidad comercial.
 
 ## Desarrollo
 
@@ -53,6 +54,7 @@ brand/            Pack de marca — GENERADO, no editar a mano
   referencias/    Brand board original y el primer pack, como referencia histórica
 docs/
   marca.md        Guía de marca: lockups, paleta, tipografía, usos
+  vuelvo.md       Presentación, imágenes y criterio editorial de Vuelvo
 scripts/
   build-brand.mjs Generador del pack de marca
 ```
@@ -83,6 +85,12 @@ WhatsApp y Telegram pinten la tarjeta grande.
 La imagen de la tarjeta se regenera con `npm run brand`
 (`brand/social/og-image.png`).
 
+Vuelvo tiene página propia en `/casos/vuelvo/`, imagen social específica y presencia
+en `llms.txt` bajo «Productos en desarrollo». El campo `estado` de la colección
+separa su sección de los casos en uso; los contenidos previstos no se presentan
+como funciones terminadas. Mantenimiento y comprobaciones en
+[docs/vuelvo.md](docs/vuelvo.md). El contacto conserva el canal existente del estudio.
+
 ## Marca
 
 Guía completa en [docs/marca.md](docs/marca.md). Lo mínimo:
@@ -90,3 +98,8 @@ Guía completa en [docs/marca.md](docs/marca.md). Lo mínimo:
 - Azul profundo `#0F172A`, azul acento `#3B82F6`, gris `#CBD5E1`, blanco `#F8FAFC`.
 - Montserrat para titulares, Inter para texto.
 - La A de "CASTILLO" es siempre el isotipo, nunca la A de la tipografía.
+
+La entrada de Vuelvo se comprobó en escritorio y móvil (320, 390 y 1440 px), con
+build correcto y Lighthouse local 100 en accesibilidad y SEO en portada y detalle.
+El [registro de validación](docs/vuelvo.md#resultado-del-17102026) describe los límites
+y las incidencias previas de herramientas/dependencias registradas por separado.

@@ -132,6 +132,16 @@ producto, instalador y soporte— y hay prueba de ello en la propia organizació
 Al escribir copy, la prueba de trabajo entregado manda sobre el discurso de
 agencia.
 
+### Vuelvo: producto en desarrollo
+
+Vuelvo by CastilloStudio se presenta en `#en-desarrollo` y `/casos/vuelvo/`.
+`estado: en-desarrollo` lo separa de «Cosas que ya están funcionando». El contenido
+público vive en `src/content/casos/vuelvo.md`; pautas e imágenes en `docs/vuelvo.md`.
+No anunciar como disponibles Wallet, NFC, acceso por código, canjes, reservas o
+planes de pago hasta validar su estado. No enlazar el repositorio privado ni la
+demo local. La planificación y las dependencias externas viven en el contexto
+privado del estudio y en el repositorio de producto.
+
 ## Este repositorio es público
 
 Antes de escribir algo aquí —código, comentario, documento o mensaje de

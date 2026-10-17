@@ -2,7 +2,9 @@
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 
-const casos = (await getCollection('casos')).sort((a, b) => a.data.orden - b.data.orden);
+const casos = (await getCollection('casos'))
+  .filter((caso) => caso.data.estado === 'en-uso')
+  .sort((a, b) => a.data.orden - b.data.orden);
 const contenidos = await Promise.all(
   casos.map(async (caso) => ({ caso, Body: (await render(caso)).Content })),
 );

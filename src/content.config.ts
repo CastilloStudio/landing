@@ -6,6 +6,8 @@ const casos = defineCollection({
   schema: ({ image }) => z.object({
     orden: z.number(),
     nombre: z.string(),
+    /** Un proyecto en desarrollo no se presenta como un caso ya en uso. */
+    estado: z.enum(['en-uso', 'en-desarrollo']).default('en-uso'),
     /** Icono del proyecto, cuadrado, en src/assets/casos/. */
     icono: image(),
     titular: z.string(),
